@@ -1,0 +1,29 @@
+# Jetbrains
+.idea
+
+# MacOS Desktop Services Store
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Dist files
+lib
+
+# Dependency directories
+node_modules/
+jspm_packages/
+.firebase
+
+# Build files
+dist
+
+# VitePress files
+.vitepress/cache/
+.vitepress/dist/
+.temp
+
+# Env files
+.env.*.local
+
+# Thumbnails
+._*

@@ -1,0 +1,16 @@
+.probe export-ignore
+.probe import-ignore
+* text=auto
+* text=auto eol=lf
+*.bat text eol=crlf
+
+# Ensure case sensitivity for all files
+* -text
+
+# Force case sensitivity for specific file types that are commonly affected
+*.md -text
+*.js -text
+*.ts -text
+*.json -text
+*.yml -text
+*.yaml -text

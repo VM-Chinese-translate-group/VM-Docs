@@ -19,10 +19,5 @@
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
     "@nolebase/vitepress-plugin-inline-link-preview": "^2.18.2",
     "vitepress": "2.0.0-alpha.17"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
   }
 }

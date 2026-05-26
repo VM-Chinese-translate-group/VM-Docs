@@ -9,7 +9,7 @@ outline: deep
 
 ## `LinkCard` 示例
 ### `LargeLinkCard` 示例
-#### EmojiIcon
+#### EmojiTextIcon
 <LargeLinkCard title="查看文档规范" desc="统一命名、结构和维护方式。" href="/guide/conventions" icon="📘"/>
 <LargeLinkCard title="Vue 官方网站" desc="外部链接示例，会在新窗口打开。" href="https://vuejs.org/" icon="🟢" :external="true"/>
 #### ImageIcon
@@ -20,7 +20,7 @@ outline: deep
 <LargeLinkCard title="Github (VMTUCore)" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
 
 ### `MediumLinkCard` 示例
-#### EmojiIcon
+#### EmojiTextIcon
 <MediumLinkCard title="FAQ" href="/guide/faq" icon="❓" />
 <MediumLinkCard title="VMTU" href="/vmtu/index" icon="🧭" />
 <MediumLinkCard title="Vue 官网" href="https://vuejs.org/" icon="🟢" :external="true" />
@@ -32,7 +32,7 @@ outline: deep
 <MediumLinkCard title="Github" desc="(VMTUCore)" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
 
 ### `MiniLinkCard` 示例
-#### EmojiIcon
+#### EmojiTextIcon
 <MiniLinkCard title="FAQ" href="/guide/faq" icon="❓" />
 <MiniLinkCard title="VMTU" href="/vmtu/index" icon="🧭" />
 <MiniLinkCard title="Vue 官网" href="https://vuejs.org/" icon="🟢" :external="true" />

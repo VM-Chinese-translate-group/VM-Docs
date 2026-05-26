@@ -9,8 +9,8 @@ VM 汉化更新是一个为 Minecraft 整合包汉化补丁设计的自动化汉
 > MC 1.12.2版本的 VMTU 配置文件为 cfg 格式，与文档演示的toml格式存在较大差异，请以游戏内实际为准
 
 <MediumLinkCard title="Github" href="https://github.com/VM-Chinese-translate-group/VMTranslationUpdateMod" iconify="simple-icons:github" :external="true"/>
-<MediumLinkCard title="Github" desc="(VMTUCore)" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
-<MediumLinkCard title="Github" desc="(VM-Resources)" href="https://github.com/VM-Chinese-translate-group/VM-Resources" iconify="simple-icons:github" :external="true"/>
+<MediumLinkCard title="Github" desc="VMTUCore" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
+<MediumLinkCard title="Github" desc="VM-Resources" href="https://github.com/VM-Chinese-translate-group/VM-Resources" iconify="simple-icons:github" :external="true"/>
 <MediumLinkCard title="CurseForge" href="https://www.curseforge.com/minecraft/mc-mods/vmtranslationupdate" iconify="simple-icons:curseforge" iconifyColor="#f1693c" :external="true"/>
 <MediumLinkCard title="Modrinth" href="https://modrinth.com/mod/vmupdate" iconify="simple-icons:modrinth" iconifyColor="#60e499" :external="true"/>
 

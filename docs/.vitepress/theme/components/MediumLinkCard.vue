@@ -149,7 +149,7 @@ const props = withDefaults(
 .medium-link-card-desc {
   margin-top: 1px;
   width: 100%;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.25;
   color: var(--vp-c-text-2);
   text-align: center;

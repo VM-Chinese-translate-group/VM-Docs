@@ -110,6 +110,7 @@ const props = withDefaults(
   width: 46px;
   height: 46px;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 .medium-link-card-iconify {

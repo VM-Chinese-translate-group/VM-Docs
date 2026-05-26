@@ -114,11 +114,12 @@ const props = withDefaults(
 }
 
 .large-link-card-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   text-align: center;
   line-height: 1;
-  flex: 0 0 24px;
+  font-size: 20px;
+  flex: 2 0 18px;
 }
 
 .large-link-card-iconify {

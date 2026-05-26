@@ -2,7 +2,10 @@
 outline: deep
 ---
 
-# 组件示例
+# 文档特有组件示例 <Badge type="danger" text="Alpha" />
+
+> [!WARNING] 🚧警告🚧
+> 本页面所有控件均处于WIP状态，随时可能进行破坏性更改
 
 ## `LinkCard` 示例
 ### `LargeLinkCard` 示例

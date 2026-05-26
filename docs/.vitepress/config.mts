@@ -28,9 +28,11 @@ export default defineConfig({
   description: "VM 文档",
   themeConfig: {
     nav: [
-      { text: "首页", link: "/" },
-      { text: "快速开始", link: "/guide/getting-started" },
-      { text: "文档规范", link: "/guide/conventions" }
+      { text: "首页", link: "/" }
+    ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'bilibili', link: 'https://space.bilibili.com/2085089798' }
     ],
     sidebar: [
       {

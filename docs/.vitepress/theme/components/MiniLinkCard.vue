@@ -128,6 +128,6 @@ const props = withDefaults(
 
 .mini-link-card-external {
   color: var(--vp-c-text-3);
-  font-size: 14px;
+  font-size: 12px;
 }
 </style>

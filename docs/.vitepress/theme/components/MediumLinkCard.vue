@@ -164,9 +164,9 @@ const props = withDefaults(
 
 .medium-link-card-external {
   position: absolute;
-  top: 12px;
+  top: 14px;
   right: 10px;
   color: var(--vp-c-text-3);
-  font-size: 14px;
+  font-size: 12px;
 }
 </style>

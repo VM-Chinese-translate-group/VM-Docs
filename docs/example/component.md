@@ -12,34 +12,91 @@ outline: deep
 #### EmojiTextIcon
 <LargeLinkCard title="查看文档规范" desc="统一命名、结构和维护方式。" href="/guide/conventions" icon="📘"/>
 <LargeLinkCard title="Vue 官方网站" desc="外部链接示例，会在新窗口打开。" href="https://vuejs.org/" icon="🟢" :external="true"/>
+
+```markdown
+<LargeLinkCard title="查看文档规范" desc="统一命名、结构和维护方式。" href="/guide/conventions" icon="📘"/>
+<LargeLinkCard title="Vue 官方网站" desc="外部链接示例，会在新窗口打开。" href="https://vuejs.org/" icon="🟢" :external="true"/>
+```
+
 #### ImageIcon
 <LargeLinkCard title="VMTU" desc="图片图标示例" href="/vmtu/index" iconSrc="/img/example/icon.png" />
+
+```markdown
+<LargeLinkCard title="VMTU" desc="图片图标示例" href="/vmtu/index" iconSrc="/img/example/icon.png" />
+```
+
 #### IconifyIcon
 <LargeLinkCard title="Modrinth" desc="Iconify图标示例" href="https://modrinth.com/mod/vmupdate" iconify="simple-icons:modrinth" iconifyColor="#60e499" :external="true" />
+
+```markdown
+<LargeLinkCard title="Modrinth" desc="Iconify图标示例" href="https://modrinth.com/mod/vmupdate" iconify="simple-icons:modrinth" iconifyColor="#60e499" :external="true" />
+```
+
 #### WithoutDesc
 <LargeLinkCard title="Github (VMTUCore)" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
+
+```markdown
+<LargeLinkCard title="Github (VMTUCore)" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
+```
+
 
 ### `MediumLinkCard` 示例
 #### EmojiTextIcon
 <MediumLinkCard title="FAQ" href="/guide/faq" icon="❓" />
 <MediumLinkCard title="VMTU" href="/vmtu/index" icon="🧭" />
 <MediumLinkCard title="Vue 官网" href="https://vuejs.org/" icon="🟢" :external="true" />
+
+```markdown
+<MediumLinkCard title="FAQ" href="/guide/faq" icon="❓" />
+<MediumLinkCard title="VMTU" href="/vmtu/index" icon="🧭" />
+<MediumLinkCard title="Vue 官网" href="https://vuejs.org/" icon="🟢" :external="true" />
+```
+
 #### ImageIcon
 <MediumLinkCard title="VMTU" href="/vmtu/index" iconSrc="/img/example/icon.png" />
+
+```markdown
+<MediumLinkCard title="VMTU" href="/vmtu/index" iconSrc="/img/example/icon.png" />
+```
+
 #### IconifyIcon
 <MediumLinkCard title="Modrinth" href="https://modrinth.com/mod/vmupdate" iconify="simple-icons:modrinth" iconifyColor="#60e499" :external="true" />
+
+```markdown
+<MediumLinkCard title="Modrinth" href="https://modrinth.com/mod/vmupdate" iconify="simple-icons:modrinth" iconifyColor="#60e499" :external="true" />
+```
+
 #### WithDesc
-<MediumLinkCard title="Github" desc="(VMTUCore)" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
+<MediumLinkCard title="Github" desc="VMTUCore" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
+
+```markdown
+<MediumLinkCard title="Github" desc="VMTUCore" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
+```
+
 
 ### `MiniLinkCard` 示例
 #### EmojiTextIcon
 <MiniLinkCard title="FAQ" href="/guide/faq" icon="❓" />
 <MiniLinkCard title="VMTU" href="/vmtu/index" icon="🧭" />
 <MiniLinkCard title="Vue 官网" href="https://vuejs.org/" icon="🟢" :external="true" />
+```markdown
+<MiniLinkCard title="FAQ" href="/guide/faq" icon="❓" />
+<MiniLinkCard title="VMTU" href="/vmtu/index" icon="🧭" />
+<MiniLinkCard title="Vue 官网" href="https://vuejs.org/" icon="🟢" :external="true" />
+```
 #### ImageIcon
 <MiniLinkCard title="VMTU" href="/vmtu/index" iconSrc="/img/example/icon.png" />
+
+```markdown
+<MiniLinkCard title="VMTU" href="/vmtu/index" iconSrc="/img/example/icon.png" />
+```
+
 #### IconifyIcon
 <MiniLinkCard title="Modrinth" href="https://modrinth.com/mod/vmupdate" iconify="simple-icons:modrinth" iconifyColor="#60e499" :external="true"/>
+
+```markdown
+<MiniLinkCard title="Modrinth" href="https://modrinth.com/mod/vmupdate" iconify="simple-icons:modrinth" iconifyColor="#60e499" :external="true"/>
+```
 
 ## `FileTree` 示例
 
@@ -77,3 +134,40 @@ outline: deep
     }
   ]"
 />
+
+```markdown
+<FileTree
+  title="项目结构"
+  :items="[
+    {
+      name: 'docs',
+      children: [
+        { name: 'index.md', type: 'file' },
+        {
+          name: 'guide',
+          children: [
+            { name: 'getting-started.md', type: 'file' },
+            { name: 'conventions.md', type: 'file' },
+            { name: 'faq.md', type: 'file' }
+          ]
+        },
+        {
+          name: '.vitepress',
+          children: [
+            { name: 'config.mts', type: 'file' },
+            { name: 'theme', type: 'folder' },
+            {
+              name: 'components',
+              children: [
+                { name: 'LinkCard.vue', type: 'file' },
+                { name: 'MiniLinkCard.vue', type: 'file' },
+                { name: 'FileTree.vue', type: 'file' }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]"
+/>
+```

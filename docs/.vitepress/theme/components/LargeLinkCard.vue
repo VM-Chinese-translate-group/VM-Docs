@@ -143,7 +143,7 @@ const props = withDefaults(
 .large-link-card-external {
   margin-left: auto;
   color: var(--vp-c-text-3);
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .large-link-card-desc {

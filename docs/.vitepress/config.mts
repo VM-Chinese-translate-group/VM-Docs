@@ -36,22 +36,6 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: "指南",
-        items: [
-          { text: "快速开始", link: "/guide/getting-started" },
-          { text: "文档规范", link: "/guide/conventions" },
-          { text: "常见问题", link: "/guide/faq" }
-        ]
-      },
-      {
-        text: "示例",
-        items: [
-          { text: "Markdown 示例", link: "example/markdown" },
-          { text: "API 示例", link: "example/api" },
-          { text: "组件示例", link: "example/component" }
-        ]
-      },
-      {
         text: "VMTU",
         items: [
           { text: "模组简介", link: "/vmtu/" },
@@ -62,6 +46,14 @@ export default defineConfig({
           { text: "汉化更新检测", link: "/vmtu/translation-update" },
           { text: "支持的模组加载器及版本", link: "/vmtu/supported-version" },
           { text: "VM Metadata", link: "/vmtu/metadata" }
+        ]
+      },
+      {
+        text: "文档样式示例",
+        items: [
+          { text: "Markdown 示例", link: "example/markdown" },
+          { text: "API 示例", link: "example/api" },
+          { text: "组件示例", link: "example/component" }
         ]
       }
     ],

@@ -9,14 +9,14 @@ VM 汉化更新是一个为 Minecraft 整合包汉化补丁设计的自动化汉
 > MC 1.12.2版本的 VMTU 配置文件为 cfg 格式，与文档演示的toml格式存在较大差异，请以游戏内实际为准
 
 <MediumLinkCard title="Github" href="https://github.com/VM-Chinese-translate-group/VMTranslationUpdateMod" iconify="simple-icons:github" :external="true"/>
-<MediumLinkCard title="Github" desc="VMTUCore" href="https://github.com/VM-Chinese-translate-group/VMTUCore" iconify="simple-icons:github" :external="true"/>
+<MediumLinkCard title="Github" desc="VMTULibraries" href="https://github.com/VM-Chinese-translate-group/VMTULibraries" iconify="simple-icons:github" :external="true"/>
 <MediumLinkCard title="Github" desc="VM-Resources" href="https://github.com/VM-Chinese-translate-group/VM-Resources" iconify="simple-icons:github" :external="true"/>
 <MediumLinkCard title="CurseForge" href="https://www.curseforge.com/minecraft/mc-mods/vmtranslationupdate" iconify="simple-icons:curseforge" iconifyColor="#f1693c" :external="true"/>
 <MediumLinkCard title="Modrinth" href="https://modrinth.com/mod/vmupdate" iconify="simple-icons:modrinth" iconifyColor="#60e499" :external="true"/>
 
 作者：捂脸、TexTrue
 
-开源协议：MIT（VMTranslationUpdateMod）、AGPL（VMTUCore）
+开源协议：MIT（VMTUMod）、AGPL v3（VMTULibraries-ResourcePack）、LGPL v3（VMTULibraries-Common、VMTULibraries-Modpack）
 
 ## 🎯 功能
 
@@ -29,4 +29,4 @@ VM 汉化更新是一个为 Minecraft 整合包汉化补丁设计的自动化汉
 - 🚦 指定资源包加载顺序
 - 🔍 支持检测 I18nUpdateMod、Vault Patcher、Texture Locale Redirector 模组是否缺失。如未安装将弹出提示页面引导下载
 
-其中，自动下载并激活资源包功能（VMTUCore）的代码源于 i18nUpdateMod3 模组代码修改，按照上游协议规定使用 AGPL 协议。
+其中，自动下载并激活资源包功能（VMTULibraries-ResourcePack）的代码源于 i18nUpdateMod3 模组代码修改，按照上游协议规定使用 AGPL v3 协议。

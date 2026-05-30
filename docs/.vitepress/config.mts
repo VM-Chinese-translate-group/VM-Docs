@@ -31,7 +31,7 @@ export default defineConfig({
       { text: "首页", link: "/" }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/VM-Chinese-translate-group' },
       { icon: 'bilibili', link: 'https://space.bilibili.com/2085089798' }
     ],
     sidebar: [

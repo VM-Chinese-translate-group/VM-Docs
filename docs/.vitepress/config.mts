@@ -64,7 +64,15 @@ export default defineConfig({
           { text: "VM Metadata", link: "/vmtu/metadata" }
         ]
       }
-    ]
+    ],
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: 'TTUZ1AK1BJ',
+        apiKey: '079af68ecd924c327b5ee9591e0dd829',
+        indexName: 'VM-Docs'
+      }
+    }
   },
   markdown: {
     config: (md) => {

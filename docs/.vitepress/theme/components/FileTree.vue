@@ -4,6 +4,7 @@ import FileTreeNode from "./FileTreeNode.vue";
 type FileTreeItem = {
   name: string;
   type?: "file" | "folder";
+  flag?: string;
   children?: FileTreeItem[];
 };
 

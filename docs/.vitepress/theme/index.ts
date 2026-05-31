@@ -13,6 +13,8 @@ import MiniLinkCard from "./components/MiniLinkCard.vue";
 import MediumLinkCard from "./components/MediumLinkCard.vue";
 // @ts-ignore
 import FileTree from "./components/FileTree.vue";
+// @ts-ignore
+import DemoContainer from "./components/DemoContainer.vue";
 import "./style.css";
 
 import {
@@ -44,6 +46,7 @@ export default {
     app.component("MiniLinkCard", MiniLinkCard);
     app.component("MediumLinkCard", MediumLinkCard);
     app.component("FileTree", FileTree);
+    app.component("DemoContainer", DemoContainer);
     app.use(NolebaseInlineLinkPreviewPlugin)
   }
 } satisfies Theme;

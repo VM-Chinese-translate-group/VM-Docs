@@ -1,89 +1,62 @@
 ---
 outline: deep
+next: false
 ---
 
-# Markdown Extension Examples
+# Markdown 扩展示例 <Badge type="danger" text="Alpha" />
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+> [!WARNING] 🚧警告🚧
+> 本页面所有控件均处于WIP状态，随时可能进行破坏性更改
 
-## Syntax Highlighting
+本页展示了本文档提供的 Markdown 扩展功能。 VitePress所支持的 Markdown 扩展功能请查看[VitePress官方文档](https://vitepress.dev/guide/markdown)。
 
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
+## 词语释义 (Abbr)
+此功能由`markdown-it-abbr`提供支持，此功能用于定义词语释义。
 
-**Input**
+:::demo
+*[HTML]: 超文本标记语言（Hyper Text Markup Language）
+*[W3C]: 万维网联盟（World Wide Web Consortium）
 
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
-
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-
-## Custom Containers
-
-**Input**
-
-```md
-::: info
-This is an info box.
+HTML 规范由 W3C 负责维护。
 :::
 
-::: tip
-This is a tip.
+## 示例容器 （Demo）
+通过本文档自行基于`markdown-it`接口实现的`demo`插件，我们提供了一个名为`demo`的示例容器。
+
+:::demo
+这是外层容器的内容。
+
+:::demo 套娃容器
+这是内层容器的内容，支持**粗体**、*斜体* 和`代码`。
+<MiniLinkCard title="同样支持Vue组件" href="api" icon="❓" />
 :::
 
-::: warning
-This is a warning.
+外层容器的其他内容。
 :::
 
-::: danger
-This is a dangerous warning.
-:::
+## 步骤组 （Stepper）
+通过本文档自行基于`markdown-it`接口实现的`stepper`插件，我们提供了一个名为`stepper`的步骤组容器。
 
-::: details
-This is a details block.
-:::
+:::demo
+:::stepper
+@tab 第一步
+安装项目依赖：
+
+```bash
+npm install
 ```
 
-**Output**
+@tab 第二步
+启动开发服务器：
 
-::: info
-This is an info box.
+```bash
+npm run dev
+```
+
+@tab 第三步
+打开浏览器访问 `http://localhost:5173` 查看效果。
+
+@tab 第四步
+出bug了，D老师快救救我
 :::
-
-::: tip
-This is a tip.
 :::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).

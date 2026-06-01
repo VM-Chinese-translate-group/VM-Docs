@@ -5,13 +5,7 @@ title: 支持的模组加载器及版本
 
 # 版本支持情况
 
-本模组需要 Cloth Config API 作为前置（1.12.2版本除外），支持三大主流模组加载器：
-
-![](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/forge_vector.svg)
-
-![](https://raw.githubusercontent.com/KessokuTeaTime/Badges-Extra/main/assets/cozy/supported/neoforge_vector.svg)
-
-![](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_vector.svg)
+本模组需要 Cloth Config API 作为前置（1.12.2版本除外），支持Forge、NeoForge 和 Fabric三大主流模组加载器。
 
 VMTU 目前同时支持和维护以下的全版本，以下是支持版本列表：
 

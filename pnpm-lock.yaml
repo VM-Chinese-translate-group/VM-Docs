@@ -7,6 +7,16 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@mdit/plugin-container':
+        specifier: ^0.23.2
+        version: 0.23.2(markdown-it@14.2.0)
+      markdown-it:
+        specifier: ^14.2.0
+        version: 14.2.0
+      markdown-it-abbr:
+        specifier: ^2.0.0
+        version: 2.0.0
     devDependencies:
       '@iconify/vue':
         specifier: ^5.0.1
@@ -233,6 +243,15 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
+
+  '@mdit/plugin-container@0.23.2':
+    resolution: {integrity: sha512-rXlFg37YuQDNcVKCaPtaJ2oCbfxTIguzf0Uklt65PK6J3kqB82+IE0+p87GIObWxdm1ajfbMUSLfvfrHoiqq4Q==}
+    engines: {node: '>= 20'}
+    peerDependencies:
+      markdown-it: ^14.1.0
+    peerDependenciesMeta:
+      markdown-it:
+        optional: true
 
   '@nolebase/markdown-it-bi-directional-links@2.18.2':
     resolution: {integrity: sha512-sg+p9cGNoa1Ku6XUUcCR7ou12OntgY/e9O5jhBHmE/+thGRwqORBDLpI2Bqz7yvgJ/jIIyMXzflp1xHF/kGJKg==}
@@ -679,6 +698,9 @@ packages:
   mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
 
+  markdown-it-abbr@2.0.0:
+    resolution: {integrity: sha512-of7C8pXSjXjDojW4neNP+jD7inUYH/DO0Ca+K/4FUEccg0oHAEX/nfscw0jfz66PJbYWOAT9U8mjO21X5p6aAw==}
+
   markdown-it-attrs@4.5.0:
     resolution: {integrity: sha512-dsuEyK/MDAYsdZLDIaDAQXz5+gP0AAbJ4ZjOSB0w+ZGe4lLbzyCgGg0LApC6j9zUK2F+2SA9VkzXfyNG9hL/8g==}
     engines: {node: '>=6'}
@@ -1038,6 +1060,12 @@ snapshots:
       vue: 3.5.34
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
+
+  '@mdit/plugin-container@0.23.2(markdown-it@14.2.0)':
+    dependencies:
+      '@types/markdown-it': 14.1.2
+    optionalDependencies:
+      markdown-it: 14.2.0
 
   '@nolebase/markdown-it-bi-directional-links@2.18.2(markdown-it@14.2.0)':
     dependencies:
@@ -1461,6 +1489,8 @@ snapshots:
     optional: true
 
   mark.js@8.11.1: {}
+
+  markdown-it-abbr@2.0.0: {}
 
   markdown-it-attrs@4.5.0(markdown-it@14.2.0):
     dependencies:

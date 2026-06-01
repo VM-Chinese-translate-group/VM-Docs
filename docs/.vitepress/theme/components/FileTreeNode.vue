@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-ignore
 import { computed, ref } from "vue";
 import { Icon } from "@iconify/vue";
 

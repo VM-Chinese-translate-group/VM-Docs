@@ -136,7 +136,3 @@
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
 }
-
-.VPSocialLinks.VPNavBarSocialLinks.social-links {
-  margin-right: 0;
-}

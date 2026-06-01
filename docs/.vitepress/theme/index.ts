@@ -4,6 +4,16 @@ import { h } from "vue";
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 
+import {
+  NolebaseEnhancedReadabilitiesMenu,
+  NolebaseEnhancedReadabilitiesScreenMenu,
+} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import {
+  NolebaseInlineLinkPreviewPlugin
+} from '@nolebase/vitepress-plugin-inline-link-preview/client'
+
+import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
+import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css'
 
 // @ts-ignore
 import LargeLinkCard from "./components/LargeLinkCard.vue";
@@ -14,21 +24,12 @@ import MediumLinkCard from "./components/MediumLinkCard.vue";
 // @ts-ignore
 import FileTree from "./components/FileTree.vue";
 // @ts-ignore
-import DemoContainer from "./components/DemoContainer.vue";
+import StepperContainerWrapper from "./components/StepperContainerWrapper.vue";
+
 import "./style.css";
-
-import {
-  NolebaseEnhancedReadabilitiesMenu,
-  NolebaseEnhancedReadabilitiesScreenMenu,
-} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
-
-import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
-
-import {
-  NolebaseInlineLinkPreviewPlugin,
-} from '@nolebase/vitepress-plugin-inline-link-preview/client'
-
-import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css'
+import "./styles/patches.css"
+import "./styles/plugins/demo-container.css";
+import "./styles/plugins/stepper-container.css";
 
 export default {
   extends: DefaultTheme,
@@ -46,7 +47,7 @@ export default {
     app.component("MiniLinkCard", MiniLinkCard);
     app.component("MediumLinkCard", MediumLinkCard);
     app.component("FileTree", FileTree);
-    app.component("DemoContainer", DemoContainer);
+    app.component("StepperContainerWrapper", StepperContainerWrapper);
     app.use(NolebaseInlineLinkPreviewPlugin)
   }
 } satisfies Theme;

@@ -9,19 +9,18 @@ title: 配置文件
 
 VMTU 共有 3 个配置文件，要使模组正常运行三者缺一不可。
 
-本模组会在首次启动且未找到相关配置文件时在以下目录自动生成两个默认的配置文件：
+本模组会在首次启动且未找到相关配置文件时在以下目录自动生成 VMTU模组配置文件 和 modpackinfo.json 。
 
-- VMTU模组配置文件：用于控制具体模组功能的启用与否，在1.16.5及以上版本中位于 `config/vmtranslationupdate.toml`，在1.12.2版本中位于 `config/vmtranslationupdate.cfg`，本文档仅介绍1.16.5及以上版本的配置文件内容
-- `modpackinfo.json`：用于定义汉化补丁的版本信息和更新检测配置
+*[VMTU模组配置文件]: 用于控制具体模组功能的启用与否，在1.16.5及以上版本中位于 `config/vmtranslationupdate.toml`，在1.12.2版本中位于 `config/vmtranslationupdate.cfg`，本文档仅介绍1.16.5及以上版本的配置文件内容
+*[modpackinfo.json]: 用于定义汉化补丁的版本信息和更新检测配置，位于游戏根目录下
 
-对于 VMTU 模组的开发者和汉化补丁维护者，还需了解云端 vm-meta v2 版的配置文件。
-此文件用户不可见。
+对于 VMTU 模组的开发者和汉化补丁维护者，还需了解云端 vm-meta 的配置文件。此文件用户不可见。
 
-- `vm-meta`：用于汉化更新检测，存储汉化补丁的汉化版本信息及对应支持的整合包版本
+*[vm-meta]: 用于定义汉化补丁的版本信息和更新检测配置，位于游戏根目录下
 
 ## 模组功能开关配置
 
-我们首先来介绍VMTU模组配置文件。
+我们首先来介绍 VMTU模组配置文件 。
 
 它是 VMTU 模组的主要配置文件，位于游戏的 `config` 目录下。此文件用于控制具体模组功能的启用与否。
 
@@ -49,12 +48,12 @@ textureLocaleRedirector = false         # 是否检查安装 Texture Locale Redi
 
 ## 汉化信息配置
 
-`modpackinfo.json` 是用于标记整合包信息以及汉化包配置的文件，位于游戏的根目录下。
+modpackinfo.json 是用于标记整合包信息以及汉化包配置的文件，位于游戏的根目录下。
 此文件用于让 VMTU 基于此文件内的信息向云端查询游戏安装的汉化补丁是否需要更新。
 
 下方为默认生成的配置文件内容（需开启生成示例整合包信息文件 `generateExampleModpackInfo` 功能）：
 
-```json
+```json5
 {
   "modpack": {
     "name": "ExampleModpack", // 整合包名称（暂无用途）
@@ -84,28 +83,8 @@ textureLocaleRedirector = false         # 是否检查安装 Texture Locale Redi
 
 ## 云端汉化信息配置 （vm-meta）
 
-`vm-meta` 是存储在云端的汉化补丁信息文件。VMTU 会联网基于此文件内的信息与本地 `modpackinfo.json` 中的汉化信息对比，
+vm-meta 是存储在云端的汉化补丁信息文件。VMTU 会联网基于此文件内的信息与本地 modpackinfo.json 中的汉化信息对比，
 来检测汉化补丁是否需要更新。
-
-以 v2 版本为例，此文件位于 <https://github.com/VM-Chinese-translate-group/VM-Resources/blob/main/update/v2/vm-meta.json> 。
-
-```json
-{
-  "metaVersion": "v2", // 数据格式版本，暂无用途
-  "modpacks": {
-    "example": {
-      // 汉化补丁id，对应本地 modpackinfo.json 中的 translation.id
-      "translationVersion": "1.1.0", // 最新汉化补丁版本号
-      "modpackVersion": "1.0.2" // 该汉化补丁支持的最新整合包版本号
-    },
-    "example2": {
-      // 汉化补丁id，对应本地 modpackinfo.json 中的 translation.id
-      "translationVersion": "1.4.0", // 最新汉化补丁版本号
-      "modpackVersion": "1.2.1" // 该汉化补丁支持的最新整合包版本号
-    }
-  }
-}
-```
 
 有关云端 vm-meta 文件的更多信息，请参见 [VM Metadata 文档](./metadata) 。
 

@@ -1,9 +1,9 @@
 import { defineConfig } from "vitepress";
 import { BiDirectionalLinks } from '@nolebase/markdown-it-bi-directional-links'
-
-import {
-  InlineLinkPreviewElementTransform
-} from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
+import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
+import mdAbbr from "markdown-it-abbr";
+import { demo } from "./theme/plugins/DemoContainer";
+import { stepper } from "./theme/plugins/StepperContainer";
 
 export default defineConfig({
   vite: {
@@ -37,12 +37,13 @@ export default defineConfig({
     sidebar: [
       {
         text: "VMTU",
+        collapsed: true,
         items: [
           { text: "模组简介", link: "/vmtu/" },
           { text: "配置文件", link: "/vmtu/config" },
-          { text: "语言相关功能", link: "/vmtu/language" },
-          { text: "模组安装检测", link: "/vmtu/mod-check" },
-          { text: "资源包相关", link: "/vmtu/resourcepack" },
+          { text: "语言", link: "/vmtu/language" },
+          { text: "模组检测", link: "/vmtu/mod-check" },
+          { text: "资源包", link: "/vmtu/resourcepack" },
           { text: "汉化更新检测", link: "/vmtu/translation-update" },
           { text: "版本支持情况", link: "/vmtu/supported-version" },
           { text: "VM Metadata", link: "/vmtu/metadata" }
@@ -50,6 +51,7 @@ export default defineConfig({
       },
       {
         text: "文档示例",
+        collapsed: true,
         items: [
           { text: "Markdown 示例", link: "example/markdown" },
           { text: "API 示例", link: "example/api" },
@@ -70,6 +72,9 @@ export default defineConfig({
     config: (md) => {
       md.use(BiDirectionalLinks())
       md.use(InlineLinkPreviewElementTransform)
+      md.use(mdAbbr)
+      md.use(demo)
+      md.use(stepper)
     },
   }
 });

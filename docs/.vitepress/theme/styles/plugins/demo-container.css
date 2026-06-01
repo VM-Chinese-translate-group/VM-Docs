@@ -1,0 +1,112 @@
+/**
+ * Component: DemoContainer (markdown-it version)
+ * -------------------------------------------------------------------------- */
+
+.demo-container {
+  margin: 14px 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: var(--vp-c-bg-soft);
+  overflow: hidden;
+}
+
+.demo-container-preview {
+  padding: 20px 22px 20px;
+  background: var(--vp-c-bg);
+  font-size: 16px;
+  line-height: 1;
+  color: var(--vp-c-text-1);
+}
+
+.demo-container-preview p {
+  margin: 0;
+}
+
+.demo-container-summary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  padding: 0 18px;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-soft);
+  border: none;
+  border-top: 1px solid var(--vp-c-divider);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.demo-container-summary:hover {
+  color: var(--vp-c-text-1);
+}
+
+.demo-container-indicator {
+  color: var(--vp-c-text-2);
+  font-size: 16px;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.demo-container--open > .demo-container-summary .demo-container-indicator {
+  transform: rotate(90deg);
+}
+
+.demo-container-title {
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 500;
+  color: inherit;
+}
+
+.demo-container-code-wrap {
+  position: relative;
+  background: var(--vp-code-block-bg);
+  color: var(--vp-code-block-color);
+  border-top: 1px solid var(--vp-c-divider);
+  display: none;
+}
+
+.demo-container--open > .demo-container-code-wrap {
+  display: block;
+}
+
+.demo-container-code-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 8px 14px 0;
+}
+
+.demo-container-lang {
+  color: var(--vp-c-text-3);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.demo-container-code {
+  margin: 0;
+  padding: 12px 22px 22px;
+  overflow-x: auto;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.demo-container-code pre {
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+}
+
+.demo-container-code code {
+  font: inherit;
+  color: inherit;
+}
+
+.demo-container-code .shiki {
+  background: transparent !important;
+}

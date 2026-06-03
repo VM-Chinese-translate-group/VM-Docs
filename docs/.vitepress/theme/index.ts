@@ -26,6 +26,9 @@ import FileTree from "./components/FileTree.vue";
 // @ts-ignore
 import StepperContainerWrapper from "./components/StepperContainerWrapper.vue";
 
+// @ts-ignore
+import SpeedInsights from "./components/integrations/SpeedInsights.vue";
+
 import "./style.css";
 import "./styles/home.css";
 import "./styles/patches.css"
@@ -49,6 +52,7 @@ export default {
     app.component("MediumLinkCard", MediumLinkCard);
     app.component("FileTree", FileTree);
     app.component("StepperContainerWrapper", StepperContainerWrapper);
+    app.component("SpeedInsights", SpeedInsights);
     app.use(NolebaseInlineLinkPreviewPlugin)
   }
 } satisfies Theme;

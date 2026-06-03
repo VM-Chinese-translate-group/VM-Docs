@@ -1,15 +1,16 @@
-<script lang="ts">
-import {defineComponent} from 'vue'
-import { SpeedInsights } from '@vercel/speed-insights/vue'
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
 
-export default defineComponent({
-  name: "SpeedInsights",
-  components: {
-    SpeedInsights
+const SpeedInsightsComponent = ref<any>(null)
+
+onMounted(async () => {
+  if (typeof window !== 'undefined') {
+    const { SpeedInsights } = await import('@vercel/speed-insights/vue')
+    SpeedInsightsComponent.value = SpeedInsights
   }
 })
 </script>
 
 <template>
-  <SpeedInsights />
+  <component :is="SpeedInsightsComponent" v-if="SpeedInsightsComponent" />
 </template>

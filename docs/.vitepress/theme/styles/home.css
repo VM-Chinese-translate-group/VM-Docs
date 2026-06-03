@@ -1,0 +1,134 @@
+/**
+ * Home page gradient background
+ * -------------------------------------------------------------------------- */
+
+.VPHome {
+  background: linear-gradient(
+    180deg,
+    var(--vp-c-bg-soft) 0%,
+    var(--vp-c-bg) 15%,
+    var(--vp-c-bg) 85%,
+    var(--vp-c-bg) 100%
+  );
+}
+
+.VPHome::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 600px;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    var(--vp-c-brand-soft) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.VPHome > * {
+  position: relative;
+  z-index: 1;
+}
+
+/**
+ * Hero animations
+ * -------------------------------------------------------------------------- */
+
+.VPHero .name {
+  animation: hero-fade-in 0.8s ease-out;
+}
+
+.VPHero .text {
+  animation: hero-fade-in 0.8s 0.15s ease-out both;
+}
+
+.VPHero .tagline {
+  animation: hero-fade-in 0.8s 0.3s ease-out both;
+}
+
+.VPHero .actions {
+  animation: hero-fade-in 0.8s 0.45s ease-out both;
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPHero .image-bg {
+  opacity: 0.2;
+}
+
+.VPHero .image-src {
+  max-width: 140px;
+  max-height: 140px;
+}
+
+@media (min-width: 640px) {
+  .VPHero .image-src {
+    max-width: 180px;
+    max-height: 180px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPHero .image-src {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+/**
+ * Feature cards
+ * -------------------------------------------------------------------------- */
+
+.VPFeatures .VPFeature {
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+
+.VPFeatures .VPFeature .icon {
+  font-size: 28px;
+}
+
+/**
+ * Home page custom sections
+ * -------------------------------------------------------------------------- */
+
+.home-links,
+.home-external {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.home-links h2,
+.home-external h2 {
+  border-top: none;
+  font-size: 24px;
+  font-weight: 700;
+  padding-top: 48px;
+  letter-spacing: -0.02em;
+}
+
+.home-external h2 {
+  margin-top: 24px;
+  padding-top: 48px;
+}
+
+.home-links .medium-link-card {
+  margin: 8px 8px 8px 0;
+}
+
+.home-external .large-link-card {
+  margin: 8px 0;
+}

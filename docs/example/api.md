@@ -1,6 +1,7 @@
 ---
+layout: doc
+title: 运行时 API 示例
 outline: deep
-next: false
 ---
 
 # 运行时 API 示例

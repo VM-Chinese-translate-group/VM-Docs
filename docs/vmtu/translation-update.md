@@ -5,14 +5,14 @@ title: 汉化更新检测
 
 # 汉化更新检测
 
-在上一节的[ `modpackinfo.json`](./config#汉化信息配置) 中，我们介绍了这个文件中的各项功能。
+在上一节的[ `modpackinfo.json`](./configs#汉化信息配置) 中，我们介绍了这个文件中的各项功能。
 现在，我们按照该文件内的功能逐一详细的介绍使用方法。
 
 ## 配置与行为
 
 整合包更新检测功能是 VMTU 的核心功能之一，其行为由 `modpackinfo.json` 内的 3 项配置决定：
 
-```json
+```json5
 {
   "modpack": {
     "name": "ExampleModpack",

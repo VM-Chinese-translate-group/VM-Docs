@@ -8,15 +8,15 @@ importers:
 
   .:
     dependencies:
-      '@mdit/plugin-container':
-        specifier: ^0.23.2
-        version: 0.23.2(markdown-it@14.2.0)
       markdown-it:
         specifier: ^14.2.0
         version: 14.2.0
       markdown-it-abbr:
         specifier: ^2.0.0
         version: 2.0.0
+      markdown-it-footnote:
+        specifier: ^4.0.0
+        version: 4.0.0
     devDependencies:
       '@iconify/vue':
         specifier: ^5.0.1
@@ -243,15 +243,6 @@ packages:
 
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
-
-  '@mdit/plugin-container@0.23.2':
-    resolution: {integrity: sha512-rXlFg37YuQDNcVKCaPtaJ2oCbfxTIguzf0Uklt65PK6J3kqB82+IE0+p87GIObWxdm1ajfbMUSLfvfrHoiqq4Q==}
-    engines: {node: '>= 20'}
-    peerDependencies:
-      markdown-it: ^14.1.0
-    peerDependenciesMeta:
-      markdown-it:
-        optional: true
 
   '@nolebase/markdown-it-bi-directional-links@2.18.2':
     resolution: {integrity: sha512-sg+p9cGNoa1Ku6XUUcCR7ou12OntgY/e9O5jhBHmE/+thGRwqORBDLpI2Bqz7yvgJ/jIIyMXzflp1xHF/kGJKg==}
@@ -707,6 +698,9 @@ packages:
     peerDependencies:
       markdown-it: '>= 9.0.0'
 
+  markdown-it-footnote@4.0.0:
+    resolution: {integrity: sha512-WYJ7urf+khJYl3DqofQpYfEYkZKbmXmwxQV8c8mO/hGIhgZ1wOe7R4HLFNwqx7TjILbnC98fuyeSsin19JdFcQ==}
+
   markdown-it@14.2.0:
     resolution: {integrity: sha512-1TGiQiJVRQ3NPmZH6sx5Cfnmg6GQm9jvC1ch4TK511NjSJvjzKLzn5pPfZRNZkRPZP0HqCioSndqH8v2nRaWVQ==}
     hasBin: true
@@ -1060,12 +1054,6 @@ snapshots:
       vue: 3.5.34
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
-
-  '@mdit/plugin-container@0.23.2(markdown-it@14.2.0)':
-    dependencies:
-      '@types/markdown-it': 14.1.2
-    optionalDependencies:
-      markdown-it: 14.2.0
 
   '@nolebase/markdown-it-bi-directional-links@2.18.2(markdown-it@14.2.0)':
     dependencies:
@@ -1495,6 +1483,8 @@ snapshots:
   markdown-it-attrs@4.5.0(markdown-it@14.2.0):
     dependencies:
       markdown-it: 14.2.0
+
+  markdown-it-footnote@4.0.0: {}
 
   markdown-it@14.2.0:
     dependencies:

@@ -10,7 +10,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "keywords": [],
-  "author": "",
+  "author": "VMChineseTranslationGroup",
   "license": "ISC",
   "packageManager": "pnpm@11.2.2",
   "devDependencies": {
@@ -21,8 +21,8 @@
     "vitepress": "2.0.0-alpha.17"
   },
   "dependencies": {
-    "@mdit/plugin-container": "^0.23.2",
     "markdown-it": "^14.2.0",
-    "markdown-it-abbr": "^2.0.0"
+    "markdown-it-abbr": "^2.0.0",
+    "markdown-it-footnote": "^4.0.0"
   }
 }

@@ -27,6 +27,7 @@ import FileTree from "./components/FileTree.vue";
 import StepperContainerWrapper from "./components/StepperContainerWrapper.vue";
 
 import "./style.css";
+import "./styles/home.css";
 import "./styles/patches.css"
 import "./styles/plugins/demo-container.css";
 import "./styles/plugins/stepper-container.css";

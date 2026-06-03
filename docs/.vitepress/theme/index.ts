@@ -44,6 +44,8 @@ export default {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
+      // Add Vercel Speed Insights
+      'layout-bottom': () => h(SpeedInsights),
     });
   },
   enhanceApp({ app }) {

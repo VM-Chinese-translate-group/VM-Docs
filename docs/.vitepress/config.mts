@@ -60,8 +60,7 @@ export default defineConfig({
           { text: "语言", link: "/vmtu/language" },
           { text: "模组检测", link: "/vmtu/mod-check" },
           { text: "资源包", link: "/vmtu/resourcepack" },
-          { text: "汉化更新检测", link: "/vmtu/translation-update" },
-          { text: "版本支持情况", link: "/vmtu/supported-version" }
+          { text: "汉化更新检测", link: "/vmtu/translation-update" }
         ]
       },
       {

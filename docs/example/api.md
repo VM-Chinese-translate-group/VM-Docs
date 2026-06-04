@@ -2,6 +2,7 @@
 layout: doc
 title: 运行时 API 示例
 outline: deep
+showCopyDownload: false
 ---
 
 # 运行时 API 示例

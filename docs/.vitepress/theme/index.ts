@@ -24,10 +24,12 @@ import MediumLinkCard from "./components/MediumLinkCard.vue";
 // @ts-ignore
 import FileTree from "./components/FileTree.vue";
 // @ts-ignore
-import StepperContainerWrapper from "./components/StepperContainerWrapper.vue";
+import StepperContainerWrapper from "./components/plugins/StepperContainerWrapper.vue";
 
 // @ts-ignore
 import SpeedInsights from "./components/integrations/SpeedInsights.vue";
+// @ts-ignore
+import CopyDownloadButtons from "./components/plugins/CopyDownloadButtons.vue";
 
 import "./style.css";
 import "./styles/home.css";
@@ -55,6 +57,7 @@ export default {
     app.component("FileTree", FileTree);
     app.component("StepperContainerWrapper", StepperContainerWrapper);
     app.component("SpeedInsights", SpeedInsights);
+    app.component('CopyDownloadButtons', CopyDownloadButtons)
     app.use(NolebaseInlineLinkPreviewPlugin)
   }
 } satisfies Theme;

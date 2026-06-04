@@ -5,12 +5,14 @@ import mdAbbr from "markdown-it-abbr";
 import mdFootnote from "markdown-it-footnote";
 import { demo } from "./theme/plugins/DemoContainer";
 import { stepper } from "./theme/plugins/StepperContainer";
+import { copyDownloadButtonsPlugin, llmsVitePlugin } from "./theme/plugins/llms-plugin";
 
 export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: '/img/logo.png' }]
   ],
   vite: {
+    plugins: [llmsVitePlugin()],
     optimizeDeps: {
       exclude: [
         '@nolebase/vitepress-plugin-inline-link-preview/client',
@@ -33,7 +35,8 @@ export default defineConfig({
   themeConfig: {
     logo: { src: '/img/logo.png' },
     nav: [
-      { text: "首页", link: "/" }
+      { text: "VMTU", link: "/vmtu/" },
+      { text: "示例", link: "/example/" }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/VM-Chinese-translate-group' },
@@ -209,6 +212,7 @@ export default defineConfig({
       md.use(mdFootnote)
       md.use(demo)
       md.use(stepper)
+      md.use(copyDownloadButtonsPlugin)
     },
   }
 });

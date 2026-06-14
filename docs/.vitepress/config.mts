@@ -31,8 +31,8 @@ export default defineConfig({
   themeConfig: {
     logo: { src: '/img/logo.png' },
     nav: [
-      { text: 'VMTU', link: '/vmtu/' },
-      { text: '示例', link: '/example/' },
+      { text: 'VMTU文档', link: '/vmtu/' },
+      { text: '汉化准则', link: '/rule/' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/VM-Chinese-translate-group' },
@@ -57,6 +57,15 @@ export default defineConfig({
           { text: '模组检测', link: '/vmtu/mod-check' },
           { text: '资源包', link: '/vmtu/resourcepack' },
           { text: '汉化更新检测', link: '/vmtu/translation-update' },
+        ],
+      },
+      {
+        text: '汉化准则',
+        collapsed: false,
+        link: '/rule/',
+        items: [
+          { text: '普适汉化准则', link: '/rule/' },
+          { text: '地图汉化准则', link: '/rule/map' },
         ],
       },
       {

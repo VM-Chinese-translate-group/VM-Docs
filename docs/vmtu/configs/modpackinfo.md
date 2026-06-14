@@ -1,8 +1,3 @@
----
-layout: doc
-title: ModpackInfo
----
-
 # ModpackInfo
 
 ModpackInfo 是用于标记整合包信息以及汉化包配置的文件，位于游戏的根目录下。

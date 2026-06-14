@@ -1,9 +1,3 @@
----
-layout: doc
-title: VM Metadata
-next: false
----
-
 # VM Metadata
 
 VM Metadata 是用于实时更新整合包版本和资源包版本数据的文件，这些文件不保存在本地，

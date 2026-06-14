@@ -1,8 +1,3 @@
----
-layout: doc
-title: 模组检测
----
-
 # 模组检测
 
 VMTU 有模组安装检测功能。其中，i18nUpdateMod 的安装检测功能为默认启用，

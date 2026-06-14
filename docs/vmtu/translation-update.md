@@ -1,8 +1,3 @@
----
-layout: doc
-title: 汉化更新检测
----
-
 # 汉化更新检测
 
 在上一节的[ `modpackinfo.json`](./configs/index) 中，我们介绍了这个文件中的各项功能。

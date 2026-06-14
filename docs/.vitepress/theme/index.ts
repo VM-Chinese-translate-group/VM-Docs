@@ -27,8 +27,6 @@ import StepperContainerWrapper from './components/plugins/StepperContainerWrappe
 // @ts-ignore
 import SpeedInsights from './components/integrations/SpeedInsights.vue'
 // @ts-ignore
-import CopyDownloadButtons from './components/plugins/CopyDownloadButtons.vue'
-
 import './style.css'
 import './styles/home.css'
 import './styles/patches.css'
@@ -55,7 +53,6 @@ export default {
     app.component('FileTree', FileTree)
     app.component('StepperContainerWrapper', StepperContainerWrapper)
     app.component('SpeedInsights', SpeedInsights)
-    app.component('CopyDownloadButtons', CopyDownloadButtons)
     app.use(NolebaseInlineLinkPreviewPlugin)
   },
 } satisfies Theme

@@ -12,16 +12,18 @@ outline: deep
 本页展示了本文档提供的 Markdown 扩展功能。 VitePress所支持的 Markdown 扩展功能请查看[VitePress官方文档](https://vitepress.dev/guide/markdown)。
 
 ## 词语释义 (Abbr) <Badge type="info" text="Dependency" />
+
 此功能由`markdown-it-abbr`提供支持，此功能用于定义词语释义。
 
 :::demo
-*[HTML]: 超文本标记语言（Hyper Text Markup Language）
-*[W3C]: 万维网联盟（World Wide Web Consortium）
+_[HTML]: 超文本标记语言（Hyper Text Markup Language）
+_[W3C]: 万维网联盟（World Wide Web Consortium）
 
 HTML 规范由 W3C 负责维护。
 :::
 
 ## 内部链接（Bi-directional links）<Badge type="info" text="Dependency" />
+
 此功能由`@nolebase/markdown-it-bi-directional-links`提供支持，此功能用于创建文档内部链接。
 
 :::demo
@@ -38,13 +40,14 @@ HTML 规范由 W3C 负责维护。
 更多使用方式可以前往[`@nolebase/markdown-it-bi-directional-links`文档](https://nolebase-integrations.ayaka.io/pages/zh-CN/integrations/markdown-it-bi-directional-links/syntax)
 
 ## 示例容器 （Demo）<Badge type="warning" text="Unstable" />
+
 通过本文档自行基于`markdown-it`接口实现的`demo`插件，我们提供了一个名为`demo`的示例容器。
 
 :::demo
 这是外层容器的内容。
 
 :::demo 套娃容器
-这是内层容器的内容，支持**粗体**、*斜体* 和`代码`。
+这是内层容器的内容，支持**粗体**、_斜体_ 和`代码`。
 <MiniLinkCard title="同样支持Vue组件" href="api" icon="❓" />
 :::
 
@@ -52,6 +55,7 @@ HTML 规范由 W3C 负责维护。
 :::
 
 ## 步骤组 （Stepper）<Badge type="warning" text="Unstable" />
+
 通过本文档自行基于`markdown-it`接口实现的`stepper`插件，我们提供了一个名为`stepper`的步骤组容器。
 
 :::demo

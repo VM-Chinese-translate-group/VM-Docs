@@ -1,12 +1,16 @@
-# VM-Docs
+<div align="center">
+  <img src="docs/public/img/logo.png" alt="VM汉化组" width="128" height="128" />
+</div>
 
-VM文档库, 基于vitepress开发
+# VM汉化组文档站
 
-## 开发/部署
+立即访问：<https://docs.vmct-cn.top/>
 
-本项目可以使用VSCode（或VSCodium及其基于此项目的发行版）、WebStorm进行开发
+## 📖 使用与部署
 
-开发前请先安装[NodeJS](https://nodejs.org/)最新的LTS版本
+我们推荐使用 VSCode 编辑器进行开发。
+
+在开发前，请先安装 [NodeJS](https://nodejs.org/zh-cn/download/prebuilt-installer)，推荐安装 Node24。
 
 安装依赖：
 

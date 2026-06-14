@@ -1,84 +1,84 @@
 <script setup lang="ts">
 // @ts-ignore
-import { computed, ref } from "vue";
-import { Icon } from "@iconify/vue";
+import { computed, ref } from 'vue'
+import { Icon } from '@iconify/vue'
 
 type FileTreeItem = {
-  name: string;
-  type?: "file" | "folder";
-  flag?: string;
-  children?: FileTreeItem[];
-};
+  name: string
+  type?: 'file' | 'folder'
+  flag?: string
+  children?: FileTreeItem[]
+}
 
 const props = defineProps<{
-  item: FileTreeItem;
-  depth?: number;
-}>();
+  item: FileTreeItem
+  depth?: number
+}>()
 
-const depth = computed(() => props.depth ?? 0);
-const hasFlag = computed(() => !!props.item.flag);
-const rowPaddingLeft = computed(() => `${depth.value * 14 + 18}px`);
+const depth = computed(() => props.depth ?? 0)
+const hasFlag = computed(() => !!props.item.flag)
+const rowPaddingLeft = computed(() => `${depth.value * 14 + 18}px`)
 const isFolder = computed(() => {
-  if (props.item.type) return props.item.type === "folder";
-  return Array.isArray(props.item.children) && props.item.children.length > 0;
-});
-const expanded = ref(true);
+  if (props.item.type) return props.item.type === 'folder'
+  return Array.isArray(props.item.children) && props.item.children.length > 0
+})
+const expanded = ref(true)
 const rowToneClass = computed(() => {
   switch (props.item.flag) {
-    case "+":
-    case "v":
-      return "file-tree-row-tone-success";
-    case "-":
-    case "!":
-    case "x":
-      return "file-tree-row-tone-danger";
-    case "i":
-      return "file-tree-row-tone-info";
+    case '+':
+    case 'v':
+      return 'file-tree-row-tone-success'
+    case '-':
+    case '!':
+    case 'x':
+      return 'file-tree-row-tone-danger'
+    case 'i':
+      return 'file-tree-row-tone-info'
     default:
-      return "file-tree-row-tone-brand";
+      return 'file-tree-row-tone-brand'
   }
-});
+})
 
 const fileIcon = computed(() => {
-  if (isFolder.value) return "fluent:folder-16-regular";
+  if (isFolder.value) return 'fluent:folder-16-regular'
 
-  const name = props.item.name.toLowerCase();
-  const dotIndex = name.lastIndexOf(".");
-  const ext = dotIndex >= 0 ? name.slice(dotIndex + 1) : "";
+  const name = props.item.name.toLowerCase()
+  const dotIndex = name.lastIndexOf('.')
+  const ext = dotIndex >= 0 ? name.slice(dotIndex + 1) : ''
 
   const iconMap: Record<string, string> = {
-    md: "material-icon-theme:markdown",
-    mdx: "material-icon-theme:mdx",
-    txt: "fluent:document-text-16-regular",
-    json: "material-icon-theme:json",
-    yml: "fluent:document-code-16-regular",
-    yaml: "material-icon-theme:yaml",
-    toml: "material-icon-theme:toml-light",
-    ts: "material-icon-theme:typescript",
-    mts: "material-icon-theme:typescript",
-    cts: "material-icon-theme:typescript",
-    js: "material-icon-theme:javascript",
-    mjs: "material-icon-theme:javascript",
-    cjs: "material-icon-theme:javascript",
-    jsx: "material-icon-theme:javascript",
-    tsx: "material-icon-theme:typescript",
-    vue: "material-icon-theme:vue",
-    html: "material-icon-theme:html",
-    css: "material-icon-theme:css",
-    scss: "fluent:paint-brush-16-regular",
-    less: "fluent:paint-brush-16-regular",
-    png: "fluent:image-16-regular",
-    jpg: "fluent:image-16-regular",
-    jpeg: "fluent:image-16-regular",
-    gif: "fluent:image-16-regular",
-    webp: "fluent:image-16-regular",
-    svg: "material-icon-theme:svg",
-    pdf: "material-icon-theme:pdf",
-    zip: "material-icon-theme:zip"
-  };
+    md: 'material-icon-theme:markdown',
+    mdx: 'material-icon-theme:mdx',
+    txt: 'fluent:document-text-16-regular',
+    json: 'material-icon-theme:json',
+    yml: 'fluent:document-code-16-regular',
+    yaml: 'material-icon-theme:yaml',
+    toml: 'material-icon-theme:toml-light',
+    ts: 'material-icon-theme:typescript',
+    mts: 'material-icon-theme:typescript',
+    cts: 'material-icon-theme:typescript',
+    js: 'material-icon-theme:javascript',
+    mjs: 'material-icon-theme:javascript',
+    cjs: 'material-icon-theme:javascript',
+    jsx: 'material-icon-theme:javascript',
+    tsx: 'material-icon-theme:typescript',
+    vue: 'material-icon-theme:vue',
+    html: 'material-icon-theme:html',
+    css: 'material-icon-theme:css',
+    scss: 'fluent:paint-brush-16-regular',
+    less: 'fluent:paint-brush-16-regular',
+    png: 'fluent:image-16-regular',
+    jpg: 'fluent:image-16-regular',
+    jpeg: 'fluent:image-16-regular',
+    gif: 'fluent:image-16-regular',
+    webp: 'fluent:image-16-regular',
+    svg: 'material-icon-theme:svg',
+    pdf: 'material-icon-theme:pdf',
+    zip: 'material-icon-theme:zip',
+  }
 
-  return iconMap[ext] ?? "fluent:document-16-regular";
-});
+  return iconMap[ext] ?? 'fluent:document-16-regular'
+})
 </script>
 
 <template>
@@ -91,10 +91,7 @@ const fileIcon = computed(() => {
       :style="{ paddingLeft: rowPaddingLeft }"
       @click="expanded = !expanded"
     >
-      <span
-        v-if="item.flag"
-        class="file-tree-flag file-tree-flag-left"
-      >
+      <span v-if="item.flag" class="file-tree-flag file-tree-flag-left">
         {{ item.flag }}
       </span>
       <Icon
@@ -112,17 +109,10 @@ const fileIcon = computed(() => {
       :class="[hasFlag ? 'file-tree-row-flagged' : '', rowToneClass]"
       :style="{ paddingLeft: rowPaddingLeft }"
     >
-      <span
-        v-if="item.flag"
-        class="file-tree-flag file-tree-flag-left"
-      >
+      <span v-if="item.flag" class="file-tree-flag file-tree-flag-left">
         {{ item.flag }}
       </span>
-      <Icon
-        class="file-tree-icon"
-        :icon="fileIcon"
-        aria-hidden="true"
-      />
+      <Icon class="file-tree-icon" :icon="fileIcon" aria-hidden="true" />
       <span class="file-tree-name">{{ item.name }}</span>
     </div>
 
@@ -178,7 +168,7 @@ const fileIcon = computed(() => {
 }
 
 .file-tree-row-flagged::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;

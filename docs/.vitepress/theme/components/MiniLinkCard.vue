@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
+import { Icon } from '@iconify/vue'
 
 const props = withDefaults(
   defineProps<{
-    title: string;
-    href: string;
-    external?: boolean;
-    icon?: string;
-    iconify?: string;
-    iconifyColor?: string;
-    iconSrc?: string;
-    iconAlt?: string;
+    title: string
+    href: string
+    external?: boolean
+    icon?: string
+    iconify?: string
+    iconifyColor?: string
+    iconSrc?: string
+    iconAlt?: string
   }>(),
   {
     external: false,
-    icon: "🔗",
-    iconify: "",
-    iconifyColor: "",
-    iconSrc: "",
-    iconAlt: ""
-  }
-);
+    icon: '🔗',
+    iconify: '',
+    iconifyColor: '',
+    iconSrc: '',
+    iconAlt: '',
+  },
+)
 </script>
 
 <template>
@@ -32,19 +32,19 @@ const props = withDefaults(
   >
     <span class="mini-link-card-icon-slot" aria-hidden="true">
       <img
-          v-if="props.iconSrc"
-          class="mini-link-card-icon-image"
-          :src="props.iconSrc"
-          :alt="props.iconAlt || props.title"
+        v-if="props.iconSrc"
+        class="mini-link-card-icon-image"
+        :src="props.iconSrc"
+        :alt="props.iconAlt || props.title"
       />
-    <Icon
+      <Icon
         v-else-if="props.iconify"
         class="mini-link-card-iconify"
         :icon="props.iconify"
         :style="props.iconifyColor ? { color: props.iconifyColor } : undefined"
         aria-hidden="true"
-    />
-    <span v-else class="mini-link-card-icon" aria-hidden="true">{{ props.icon }}</span>
+      />
+      <span v-else class="mini-link-card-icon" aria-hidden="true">{{ props.icon }}</span>
     </span>
     <span class="mini-link-card-title">{{ props.title }}</span>
     <Icon
@@ -71,7 +71,9 @@ const props = withDefaults(
   color: var(--vp-c-text-1);
   text-decoration: none !important;
   line-height: 1.3;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .mini-link-card:hover,

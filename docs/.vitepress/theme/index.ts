@@ -1,41 +1,39 @@
 // https://vitepress.dev/guide/custom-theme
 // @ts-ignore
-import { h } from "vue";
-import type { Theme } from "vitepress";
-import DefaultTheme from "vitepress/theme";
+import { h } from 'vue'
+import type { Theme } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
 
 import {
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
-import {
-  NolebaseInlineLinkPreviewPlugin
-} from '@nolebase/vitepress-plugin-inline-link-preview/client'
+import { NolebaseInlineLinkPreviewPlugin } from '@nolebase/vitepress-plugin-inline-link-preview/client'
 
 import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css'
 
 // @ts-ignore
-import LargeLinkCard from "./components/LargeLinkCard.vue";
+import LargeLinkCard from './components/LargeLinkCard.vue'
 // @ts-ignore
-import MiniLinkCard from "./components/MiniLinkCard.vue";
+import MiniLinkCard from './components/MiniLinkCard.vue'
 // @ts-ignore
-import MediumLinkCard from "./components/MediumLinkCard.vue";
+import MediumLinkCard from './components/MediumLinkCard.vue'
 // @ts-ignore
-import FileTree from "./components/FileTree.vue";
+import FileTree from './components/FileTree.vue'
 // @ts-ignore
-import StepperContainerWrapper from "./components/plugins/StepperContainerWrapper.vue";
+import StepperContainerWrapper from './components/plugins/StepperContainerWrapper.vue'
 
 // @ts-ignore
-import SpeedInsights from "./components/integrations/SpeedInsights.vue";
+import SpeedInsights from './components/integrations/SpeedInsights.vue'
 // @ts-ignore
-import CopyDownloadButtons from "./components/plugins/CopyDownloadButtons.vue";
+import CopyDownloadButtons from './components/plugins/CopyDownloadButtons.vue'
 
-import "./style.css";
-import "./styles/home.css";
-import "./styles/patches.css"
-import "./styles/plugins/demo-container.css";
-import "./styles/plugins/stepper-container.css";
+import './style.css'
+import './styles/home.css'
+import './styles/patches.css'
+import './styles/plugins/demo-container.css'
+import './styles/plugins/stepper-container.css'
 
 export default {
   extends: DefaultTheme,
@@ -48,16 +46,16 @@ export default {
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
       // Add Vercel Speed Insights
       'layout-bottom': () => h(SpeedInsights),
-    });
+    })
   },
   enhanceApp({ app }) {
-    app.component("LargeLinkCard", LargeLinkCard);
-    app.component("MiniLinkCard", MiniLinkCard);
-    app.component("MediumLinkCard", MediumLinkCard);
-    app.component("FileTree", FileTree);
-    app.component("StepperContainerWrapper", StepperContainerWrapper);
-    app.component("SpeedInsights", SpeedInsights);
+    app.component('LargeLinkCard', LargeLinkCard)
+    app.component('MiniLinkCard', MiniLinkCard)
+    app.component('MediumLinkCard', MediumLinkCard)
+    app.component('FileTree', FileTree)
+    app.component('StepperContainerWrapper', StepperContainerWrapper)
+    app.component('SpeedInsights', SpeedInsights)
     app.component('CopyDownloadButtons', CopyDownloadButtons)
     app.use(NolebaseInlineLinkPreviewPlugin)
-  }
-} satisfies Theme;
+  },
+} satisfies Theme

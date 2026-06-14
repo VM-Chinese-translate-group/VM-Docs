@@ -31,16 +31,16 @@ VM Metadata v1 会根据 txt 的行数判断汉化补丁版本的功能。
 
 ```json5
 {
-  "modpack": {
-    "name": "ExampleModpack",
-    "version": "0.1.0",
-    "translation": {
-      "id": "example",
-      "updateCheckUrl": "https://github.com/VM-Chinese-translate-group/VM-Resources/blob/main/update/example.txt", // [!code highlight]
-      "language": "zh_cn",
-      "version": "1.0.0"
-    }
-  }
+  modpack: {
+    name: 'ExampleModpack',
+    version: '0.1.0',
+    translation: {
+      id: 'example',
+      updateCheckUrl: 'https://github.com/VM-Chinese-translate-group/VM-Resources/blob/main/update/example.txt', // [!code highlight]
+      language: 'zh_cn',
+      version: '1.0.0',
+    },
+  },
 }
 ```
 
@@ -55,19 +55,19 @@ v2 版本的文件地址为：https://github.com/VM-Chinese-translate-group/VM-R
 
 ```json5
 {
-  "metaVersion": "v2", // 数据格式版本
-  "modpacks": {
-    "example": {
+  metaVersion: 'v2', // 数据格式版本
+  modpacks: {
+    example: {
       // 汉化补丁id，对应本地 modpackinfo.json 中的 translation.id
-      "translationVersion": "1.1.0", // 最新汉化补丁版本号
-      "modpackVersion": "1.0.2" // 该汉化补丁支持的最新整合包版本号
+      translationVersion: '1.1.0', // 最新汉化补丁版本号
+      modpackVersion: '1.0.2', // 该汉化补丁支持的最新整合包版本号
     },
-    "example2": {
+    example2: {
       // 汉化补丁id，对应本地 modpackinfo.json 中的 translation.id
-      "translationVersion": "1.4.0", // 最新汉化补丁版本号
-      "modpackVersion": "1.2.1" // 该汉化补丁支持的最新整合包版本号
-    }
-  }
+      translationVersion: '1.4.0', // 最新汉化补丁版本号
+      modpackVersion: '1.2.1', // 该汉化补丁支持的最新整合包版本号
+    },
+  },
 }
 ```
 

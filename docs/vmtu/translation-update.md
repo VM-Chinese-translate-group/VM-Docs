@@ -14,16 +14,16 @@ title: 汉化更新检测
 
 ```json5
 {
-  "modpack": {
-    "name": "ExampleModpack",
-    "version": "0.1.0",
-    "translation": {
-      "id": "example", // [!code highlight]
-      "url": "https://vmct-cn.top/modpacks/example/", // [!code highlight]
-      "language": "zh_cn",
-      "version": "1.0.0" // [!code highlight]
-    }
-  }
+  modpack: {
+    name: 'ExampleModpack',
+    version: '0.1.0',
+    translation: {
+      id: 'example', // [!code highlight]
+      url: 'https://vmct-cn.top/modpacks/example/', // [!code highlight]
+      language: 'zh_cn',
+      version: '1.0.0', // [!code highlight]
+    },
+  },
 }
 ```
 

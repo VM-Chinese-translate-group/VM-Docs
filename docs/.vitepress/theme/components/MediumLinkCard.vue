@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
+import { Icon } from '@iconify/vue'
 
 const props = withDefaults(
   defineProps<{
-    title: string;
-    desc?: string;
-    href: string;
-    icon?: string;
-    iconSrc?: string;
-    iconify?: string;
-    iconifyColor?: string;
-    iconAlt?: string;
-    external?: boolean;
+    title: string
+    desc?: string
+    href: string
+    icon?: string
+    iconSrc?: string
+    iconify?: string
+    iconifyColor?: string
+    iconAlt?: string
+    external?: boolean
   }>(),
   {
-    desc: "",
-    icon: "馃敆",
-    iconSrc: "",
-    iconify: "",
-    iconifyColor: "",
-    iconAlt: "",
-    external: false
-  }
-);
+    desc: '',
+    icon: '馃敆',
+    iconSrc: '',
+    iconify: '',
+    iconifyColor: '',
+    iconAlt: '',
+    external: false,
+  },
+)
 </script>
 
 <template>
@@ -76,7 +76,9 @@ const props = withDefaults(
   position: relative;
   text-decoration: none !important;
   box-sizing: border-box;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .medium-link-card:hover,

@@ -1,7 +1,6 @@
-
 /*
  * This contains CSS patches to fix specific issues in the VitePress Vanilla theme with Enhanced Readabilities.
  */
 .VPSocialLinks.VPNavBarSocialLinks.social-links {
-    margin-right: 0;
+  margin-right: 0;
 }

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import FileTreeNode from "./FileTreeNode.vue";
+import FileTreeNode from './FileTreeNode.vue'
 
 type FileTreeItem = {
-  name: string;
-  type?: "file" | "folder";
-  flag?: string;
-  children?: FileTreeItem[];
-};
+  name: string
+  type?: 'file' | 'folder'
+  flag?: string
+  children?: FileTreeItem[]
+}
 
 defineProps<{
-  items: FileTreeItem[];
-  title?: string;
-}>();
+  items: FileTreeItem[]
+  title?: string
+}>()
 </script>
 
 <template>

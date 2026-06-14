@@ -1,23 +1,20 @@
 {
   "name": "vm-docs",
-  "version": "1.0.0",
-  "description": "VMDocs",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "format": "prettier --write docs/",
+    "upgrade-deps": "taze patch -I"
   },
-  "keywords": [],
-  "author": "VMChineseTranslationGroup",
-  "license": "ISC",
-  "packageManager": "pnpm@11.2.2",
+  "packageManager": "pnpm@11.6.0",
   "devDependencies": {
     "@iconify/vue": "^5.0.1",
     "@nolebase/markdown-it-bi-directional-links": "^2.18.2",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
     "@nolebase/vitepress-plugin-inline-link-preview": "^2.18.2",
+    "pnpm": "11.6.0",
+    "prettier": "3.8.4",
+    "taze": "^19.14.1",
     "vitepress": "2.0.0-alpha.17"
   },
   "dependencies": {

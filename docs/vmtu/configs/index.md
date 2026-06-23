@@ -6,12 +6,12 @@ VMTU 共有 3 个配置文件，要使模组正常运行三者缺一不可。
 
 本模组会在首次启动且未找到相关配置文件时在以下目录自动生成 VMTU模组配置文件 和 modpackinfo.json 。
 
-_[VMTU模组配置文件]: 用于控制具体模组功能的启用与否，在1.16.5及以上版本中位于 `config/vmtranslationupdate.toml`，在1.12.2版本中位于 `config/vmtranslationupdate.cfg`，本文档仅介绍1.16.5及以上版本的配置文件内容
-_[modpackinfo.json]: 用于定义汉化补丁的版本信息和更新检测配置，位于游戏根目录下
+*[VMTU模组配置文件]: 用于控制具体模组功能的启用与否，在1.16.5及以上版本中位于 `config/vmtranslationupdate.toml`，在1.12.2版本中位于 `config/vmtranslationupdate.cfg`，本文档仅介绍1.16.5及以上版本的配置文件内容
+*[modpackinfo.json]: 用于定义汉化补丁的版本信息和更新检测配置，位于游戏根目录下
 
 对于 VMTU 模组的开发者和汉化补丁维护者，还需了解云端 vm-meta 的配置文件。此文件用户不可见。
 
-\*[vm-meta]: 用于定义汉化补丁的版本信息和更新检测配置，位于游戏根目录下
+*[vm-meta]: 用于定义汉化补丁的版本信息和更新检测配置，位于游戏根目录下
 
 ## 模组功能开关配置
 

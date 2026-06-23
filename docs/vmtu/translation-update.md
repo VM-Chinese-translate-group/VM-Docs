@@ -24,18 +24,18 @@
 
 当本地的汉化版本号与云端查询获取的汉化补丁版本号不同时，VMTU 会在玩家进入世界后在聊天栏显示如下内容：
 
-![](/img/vmtu/different-patch-version.png)
+![[public/img/vmtu/different-patch-version.png]]
 
 当玩家在中文环境下（简中、繁中、港中、文言），但游戏语言不是所设置的支持语言
 （`modpackinfo.json` 的 `modpack.translation.language`）时会显示如下内容：
 
-![](/img/vmtu/non-specified-language.png)
+![[public/img/vmtu/non-specified-language.png]]
 
 ## 指令
 
 另外，VMTU 添加了一条客户端指令 `/vmtu check`，用于手动触发汉化更新检测。
 
-该指令会忽略 `vmtranslationupdate.toml` 中的 `checkModPackTranslationUpdate` 选项，强制进行更新检测，
+该指令会忽略模组配置中的 `checkModPackTranslationUpdate` 选项，强制进行更新检测，
 且所有游戏语言都可以使用该指令。
 
 此外，指令还拥有两个可选参数：`modpack` 和 `translation`。

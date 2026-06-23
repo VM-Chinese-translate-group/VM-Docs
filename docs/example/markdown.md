@@ -16,8 +16,8 @@ outline: deep
 此功能由`markdown-it-abbr`提供支持，此功能用于定义词语释义。
 
 :::demo
-_[HTML]: 超文本标记语言（Hyper Text Markup Language）
-_[W3C]: 万维网联盟（World Wide Web Consortium）
+*[HTML]: 超文本标记语言（Hyper Text Markup Language）
+*[W3C]: 万维网联盟（World Wide Web Consortium）
 
 HTML 规范由 W3C 负责维护。
 :::

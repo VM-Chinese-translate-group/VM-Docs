@@ -11,7 +11,7 @@ textureLocaleRedirector = false   # 是否检查安装 Texture Locale Redirector
 
 如果启用检测的任意一个模组缺失，就会弹出提示屏幕，提醒玩家安装模组，如下图所示：
 
-![[public/img/vmtu/mod_check_required.png|Custom Text]]
+![[public/img/vmtu/mod-check-required.png]]
 
 若相应模组均已安装，则不会出现任何提示；
 
@@ -22,4 +22,4 @@ textureLocaleRedirector = false   # 是否检查安装 Texture Locale Redirector
 Texture Locale Redirector 是可选模组，模组名以黄色标识。
 如果未安装，提示屏幕会多出一个复选框。勾选后玩家即使没有安装该模组也将不会再收到任何提示。
 
-![[public/img/vmtu/mod_check_optional.png]]
+![[public/img/vmtu/mod-check-optional.png]]

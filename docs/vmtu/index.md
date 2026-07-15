@@ -12,7 +12,7 @@ VMTU是一个为 Minecraft 整合包汉化补丁设计的自动化汉化管理�
 <MediumLinkCard title="Github" desc="VMTULibraries" href="https://github.com/VM-Chinese-translate-group/VMTULibraries" iconify="simple-icons:github" :external="true"/>
 <MediumLinkCard title="Github" desc="VM-Resources" href="https://github.com/VM-Chinese-translate-group/VM-Resources" iconify="simple-icons:github" :external="true"/>
 <MediumLinkCard title="CurseForge" href="https://www.curseforge.com/minecraft/mc-mods/vmtu" iconify="simple-icons:curseforge" iconifyColor="#f1693c" :external="true"/>
-<MediumLinkCard title="Modrinth" href="https://modrinth.com/mod/vmtu" iconSrc="/img/modrinth.svg" />
+<MediumLinkCard title="Modrinth" href="https://modrinth.com/mod/vmtu" iconify="selfhst:modrinth" :external="true"/>
 
 ## 模组功能
 
@@ -47,12 +47,10 @@ VMTU 目前同时支持和维护以下的全版本，以下是支持版本列表
 
 ## 开源协议
 
-作者：捂脸、TexTrue
-
 开源协议：MIT（VMTUMod）、AGPL v3（VMTULibraries-ResourcePack）、LGPL v3（VMTULibraries-Common、VMTULibraries-Modpack）
 
 其中，VMTULibraries仓库包含3个子库：
 
-- VMTULibraries-Common: VMTU通用代码库
-- VMTULibraries-ResourcePack: VMTU资源包库，用于管理汉化资源包的下载和激活。
-- VMTULibraries-Modpack: VMTU整合包库，用于管理整合包版本及其汉化补丁版本。
+- Common: VMTU通用代码库
+- ResourcePack: VMTU资源包库，用于管理汉化资源包的下载和激活。
+- Modpack: VMTU整合包库，用于管理整合包版本及其汉化补丁版本。

@@ -1,7 +1,9 @@
 import { defineConfig } from 'vitepress'
 import { BiDirectionalLinks } from '@nolebase/markdown-it-bi-directional-links'
 import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
+// @ts-ignore
 import mdAbbr from 'markdown-it-abbr'
+// @ts-ignore
 import mdFootnote from 'markdown-it-footnote'
 import { demo } from './theme/plugins/DemoContainer'
 import { stepper } from './theme/plugins/StepperContainer'
@@ -33,6 +35,7 @@ export default defineConfig({
     nav: [
       { text: 'VMTU文档', link: '/vmtu/' },
       { text: '汉化准则', link: '/rule/' },
+      { text: 'VM官网', link: 'https://vmct-cn.top/' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/VM-Chinese-translate-group' },
@@ -61,8 +64,7 @@ export default defineConfig({
       },
       {
         text: '汉化准则',
-        collapsed: false,
-        link: '/rule/',
+        collapsed: true,
         items: [
           { text: '普适汉化准则', link: '/rule/' },
           { text: '地图汉化准则', link: '/rule/map' },

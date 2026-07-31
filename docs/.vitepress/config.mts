@@ -31,6 +31,19 @@ export default defineConfig({
   title: 'VM Docs',
   description: 'VM 文档',
   themeConfig: {
+    outlineTitle: '目录',
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '返回顶部',
+    lastUpdatedText: '最后更新',
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
+    darkModeSwitchLabel: '主题',
+    lightModeSwitchTitle: '切换到浅色模式',
+    darkModeSwitchTitle: '切换到深色模式',
+    langMenuLabel: '选择语言',
+
     logo: { src: '/img/logo.png' },
     nav: [
       { text: 'VMTU文档', link: '/vmtu/' },

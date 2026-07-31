@@ -33,9 +33,9 @@ import './style.css'
 // @ts-ignore
 import './styles/home.css'
 // @ts-ignore
-import './styles/navbar.css'
-// @ts-ignore
 import './styles/patches.css'
+// @ts-ignore
+import './styles/navbar.css'
 // @ts-ignore
 import './styles/plugins/demo-container.css'
 // @ts-ignore

@@ -1,0 +1,44 @@
+/* Acrylic navigation bar */
+:root {
+  --vm-nav-acrylic-bg: rgba(255, 255, 255, 0.72);
+  --vm-nav-acrylic-border: rgba(17, 24, 39, 0.08);
+}
+
+.dark {
+  --vm-nav-acrylic-bg: rgba(27, 27, 31, 0.7);
+  --vm-nav-acrylic-border: rgba(255, 255, 255, 0.1);
+}
+
+.VPNavBar {
+  background-color: var(--vm-nav-acrylic-bg) !important;
+  border-bottom: 1px solid var(--vm-nav-acrylic-border);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+}
+
+/* Keep the home hero unobstructed until the page starts scrolling. */
+.VPNavBar.home.top {
+  background-color: transparent !important;
+  border-bottom-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.VPNavBar .divider-line {
+  display: none !important;
+}
+
+/* Keep VitePress' desktop content layer from covering the acrylic surface. */
+.VPNavBar .content-body {
+  background-color: transparent !important;
+}
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  :root {
+    --vm-nav-acrylic-bg: rgba(255, 255, 255, 0.96);
+  }
+
+  .dark {
+    --vm-nav-acrylic-bg: rgba(27, 27, 31, 0.96);
+  }
+}

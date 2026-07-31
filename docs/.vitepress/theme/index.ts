@@ -31,6 +31,8 @@ import SpeedInsights from './components/integrations/SpeedInsights.vue'
 // @ts-ignore
 import './style.css'
 // @ts-ignore
+import './styles/acrylic-navbar.css'
+// @ts-ignore
 import './styles/home.css'
 // @ts-ignore
 import './styles/patches.css'

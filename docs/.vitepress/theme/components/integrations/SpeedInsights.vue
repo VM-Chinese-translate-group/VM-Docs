@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-ignore
 import { onMounted, ref } from 'vue'
 
 const SpeedInsightsComponent = ref<any>(null)

@@ -10,7 +10,9 @@ import {
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 import { NolebaseInlineLinkPreviewPlugin } from '@nolebase/vitepress-plugin-inline-link-preview/client'
 
+// @ts-ignore
 import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
+// @ts-ignore
 import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css'
 
 // @ts-ignore
@@ -28,9 +30,13 @@ import StepperContainerWrapper from './components/plugins/StepperContainerWrappe
 import SpeedInsights from './components/integrations/SpeedInsights.vue'
 // @ts-ignore
 import './style.css'
+// @ts-ignore
 import './styles/home.css'
+// @ts-ignore
 import './styles/patches.css'
+// @ts-ignore
 import './styles/plugins/demo-container.css'
+// @ts-ignore
 import './styles/plugins/stepper-container.css'
 
 export default {

@@ -6,7 +6,7 @@
     "format": "prettier --write docs/",
     "upgrade-deps": "taze patch -I"
   },
-  "packageManager": "pnpm@11.6.0",
+  "packageManager": "pnpm@11.18.0",
   "devDependencies": {
     "@iconify/vue": "^5.0.1",
     "@nolebase/markdown-it-bi-directional-links": "^2.18.2",
@@ -14,15 +14,14 @@
     "@nolebase/vitepress-plugin-inline-link-preview": "^2.18.2",
     "pnpm": "11.6.0",
     "prettier": "3.8.4",
-    "taze": "^19.14.1",
-    "vitepress": "2.0.0-alpha.17"
+    "taze": "^19.16.0",
+    "vitepress": "2.0.0-alpha.18"
   },
   "dependencies": {
-    "@types/node": "^25.9.1",
+    "@types/node": "^26.1.2",
     "@vercel/speed-insights": "^2.0.0",
-    "markdown-it": "^14.2.0",
+    "markdown-it": "^14.3.0",
     "markdown-it-abbr": "^2.0.0",
-    "markdown-it-footnote": "^4.0.0",
-    "vue-router": "^5.1.0"
+    "markdown-it-footnote": "^4.0.0"
   }
 }

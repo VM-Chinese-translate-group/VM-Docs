@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@miletorix/vitepress-back-to-top-button':
+        specifier: ^1.0.3
+        version: 1.0.3(vitepress@2.0.0-alpha.18(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(less@4.8.1)(postcss@8.5.25)(yaml@2.9.0))(vue@3.5.40)
+      '@miletorix/vitepress-image-group':
+        specifier: ^1.1.5
+        version: 1.1.5(vue@3.5.40)
       '@types/node':
         specifier: ^26.1.2
         version: 26.1.2
@@ -320,6 +326,17 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@miletorix/vitepress-back-to-top-button@1.0.3':
+    resolution: {integrity: sha512-TFmLXOrHXKB/e75XS/mQTSAIx5YzCESYVrJIyg2Qbudkxi0RTueOQny0CVBui9hmMJSh6oxdZbLrENN/OZLD/Q==}
+    peerDependencies:
+      vitepress: ^1.6.3
+      vue: ^3.0.0
+
+  '@miletorix/vitepress-image-group@1.1.5':
+    resolution: {integrity: sha512-cfSEmrj92Hgis4Wv0R0RrphLfRMSkgFsr/qjssOI/13TMGrx5Ud/aUyW9Iaxz/VdJLKWRzUx8V72ea1pW4SMHQ==}
+    peerDependencies:
+      vue: ^3.0.0
 
   '@napi-rs/wasm-runtime@1.2.1':
     resolution: {integrity: sha512-KjZdi8Q1wh89gsVmghvbrMgWl6ZWmRmHV6wjB7/g4Zf0dyO+hH3neZUtuDNPO00qq5YE5RITVWvrIZKRaAmzGQ==}
@@ -1557,6 +1574,15 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@miletorix/vitepress-back-to-top-button@1.0.3(vitepress@2.0.0-alpha.18(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(less@4.8.1)(postcss@8.5.25)(yaml@2.9.0))(vue@3.5.40)':
+    dependencies:
+      vitepress: 2.0.0-alpha.18(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(less@4.8.1)(postcss@8.5.25)(yaml@2.9.0)
+      vue: 3.5.40
+
+  '@miletorix/vitepress-image-group@1.1.5(vue@3.5.40)':
+    dependencies:
+      vue: 3.5.40
 
   '@napi-rs/wasm-runtime@1.2.1(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)':
     dependencies:

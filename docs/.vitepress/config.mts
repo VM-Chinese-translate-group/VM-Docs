@@ -48,6 +48,18 @@ export default defineConfig({
     nav: [
       { text: 'VMTU文档', link: '/vmtu/' },
       { text: '汉化准则', link: '/rule/' },
+      {
+        text: '教程',
+        items: [
+          {
+            text: '整合包相关',
+            items: [
+              { text: '汉化补丁安装', link: 'translation' },
+              { text: '服务端下载', link: 'serverpack' },
+            ]
+          },
+        ],
+      },
       { text: 'VM官网', link: 'https://vmct-cn.top/' },
     ],
     socialLinks: [

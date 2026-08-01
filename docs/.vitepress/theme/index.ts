@@ -8,12 +8,19 @@ import {
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
-import { NolebaseInlineLinkPreviewPlugin } from '@nolebase/vitepress-plugin-inline-link-preview/client'
-
 // @ts-ignore
 import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
+import { NolebaseInlineLinkPreviewPlugin } from '@nolebase/vitepress-plugin-inline-link-preview/client'
 // @ts-ignore
 import '@nolebase/vitepress-plugin-inline-link-preview/client/style.css'
+
+import BackToTopButton from '@miletorix/vitepress-back-to-top-button'
+// @ts-ignore
+import '@miletorix/vitepress-back-to-top-button/style.css'
+
+import { ImageGroup } from '@miletorix/vitepress-image-group'
+// @ts-ignore
+import '@miletorix/vitepress-image-group/style.css'
 
 // @ts-ignore
 import LargeLinkCard from './components/LargeLinkCard.vue'
@@ -61,6 +68,10 @@ export default {
     app.component('FileTree', FileTree)
     app.component('StepperContainerWrapper', StepperContainerWrapper)
     app.component('SpeedInsights', SpeedInsights)
+    app.component('ImageGroup', ImageGroup)
     app.use(NolebaseInlineLinkPreviewPlugin)
+    BackToTopButton(app, {
+      progressColor: '#3451b2',
+    })
   },
 } satisfies Theme

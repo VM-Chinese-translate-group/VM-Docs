@@ -20,17 +20,25 @@
 
 :::details HMCL启动器操作方法
 
-![[public/img/tutorial/modpack/translation/hmcl1.png]]
-
-![[public/img/tutorial/modpack/translation/hmcl2.png]]
+<ImageGroup :sources="['/img/tutorial/modpack/translation/hmcl1.png','/img/tutorial/modpack/translation/hmcl2.png']" type="auto"/>
 
 :::
 
-:::details PCL2启动器操作方法
+:::details PCL2系启动器操作方法
 
-![[public/img/tutorial/modpack/translation/pcl1.png]]
+> [!TIP] 提示
+> 本教程以PCL2主分支为例，PCL2系启动器操作方法类似。
 
-![[public/img/tutorial/modpack/translation/pcl2.png]]
+<ImageGroup :sources="['/img/tutorial/modpack/translation/pcl1.png','/img/tutorial/modpack/translation/pcl2.png']" type="auto"/>
+
+:::
+
+:::details MultiMC系启动器操作方法（以PrismLauncher为例）
+
+> [!TIP] 提示
+> 本教程以PrismLauncher为例，MultiMC系启动器操作方法类似。
+
+<ImageGroup :sources="['/img/tutorial/modpack/translation/mmc1.png','/img/tutorial/modpack/translation/mmc2.png']" type="auto"/>
 
 :::
 

@@ -10,7 +10,7 @@ hero:
     alt: Logo
 
 features:
-  - icon: 📖
+  - icon: 📚
     title: 汉化准则
     details: 普适汉化准则与地图汉化准则
     link: /rule/index
@@ -19,5 +19,10 @@ features:
     title: VMTU文档
     details: VMTU相关配置文档
     link: /vmtu/index
+    linkText: 前往查看
+  - icon: 📦
+    title: 整合包相关教程
+    details: 整合包相关实用教程与操作指南
+    link: /tutorial/modpack/index
     linkText: 前往查看
 ---

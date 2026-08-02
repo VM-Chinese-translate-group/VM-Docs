@@ -54,8 +54,8 @@ export default defineConfig({
           {
             text: '整合包相关',
             items: [
-              { text: '汉化补丁安装', link: 'translation' },
-              { text: '服务端下载', link: 'serverpack' },
+              { text: '汉化补丁安装', link: '/tutorial/modpack/translation' },
+              { text: '服务端下载', link: '/tutorial/modpack/serverpack' },
             ]
           },
         ],

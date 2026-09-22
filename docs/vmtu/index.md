@@ -5,7 +5,7 @@ VMTU是一个为 Minecraft 整合包汉化补丁设计的自动化汉化管理�
 普通玩家可以通过它获得额外的模组资源包汉化，VM汉化组内部也可以通过它为玩家提供更好的汉化体验。
 
 > [!IMPORTANT] 重要提示
-> 本文档所有内容基于 VMTU 最新版 5.2.0 编写。
+> 本文档所有内容基于 VMTU 最新版 5.2.3 编写。
 > MC 1.12.2版本的 VMTU 配置文件为 cfg 格式，与文档演示的toml格式存在较大差异，请以游戏内实际为准
 
 <MediumLinkCard title="Github" desc="Mod主仓库" href="https://github.com/VM-Chinese-translate-group/VMTranslationUpdateMod" iconify="simple-icons:github" :external="true"/>
@@ -36,8 +36,8 @@ VMTU 目前同时支持和维护以下的全版本，以下是支持版本列表
 | 模组加载器 | 支持的 Minecraft 版本             |
 | ---------- | --------------------------------- |
 | Forge      | 1.12.2[^2]/1.16.5/1.18~1.20.4[^3] |
-| NeoForge   | 1.20~26.1.2                       |
-| Fabric     | 1.16.5~26.1.2                     |
+| NeoForge   | 1.20~26.2                       |
+| Fabric     | 1.16.5~26.2                     |
 
 [^1]: i18nUpdateMod3是由CFPA制作的模组，提供了自动下载更新资源包的功能，VMTU的相关功能基于其代码修改而来。
 

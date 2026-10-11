@@ -46,6 +46,9 @@ export default defineConfig({
     langMenuLabel: '选择语言',
 
     logo: { src: '/img/logo.png' },
+    outline: {
+      level: 'deep'
+    },
     nav: [
       { text: 'VMTU文档', link: '/vmtu/' },
       { text: '汉化准则', link: '/rule/' },
@@ -113,6 +116,14 @@ export default defineConfig({
               { text: '服务端下载', link: 'serverpack' },
             ]
           },
+        ],
+      },
+      {
+        text: '工具链文档',
+        collapsed: true,
+        base: '/internal/',
+        items: [
+          { text: '创建新项目', link: 'new-project' }
         ],
       },
       {

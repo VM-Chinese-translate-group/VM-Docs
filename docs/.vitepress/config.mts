@@ -9,6 +9,7 @@ import { demo } from './theme/plugins/DemoContainer'
 import { stepper } from './theme/plugins/StepperContainer'
 
 export default defineConfig({
+  ...(process.env.DOCS_SITE_ORIGIN ? { sitemap: { hostname: process.env.DOCS_SITE_ORIGIN } } : {}),
   head: [['link', { rel: 'icon', href: '/img/logo.png' }]],
   vite: {
     optimizeDeps: {
@@ -60,7 +61,7 @@ export default defineConfig({
           },
         ],
       },
-      { text: 'VM官网', link: 'https://vmct-cn.top/' },
+      { text: 'VM官网', link: process.env.DOCS_LOCAL_SEARCH === '1' ? 'https://www.vmct.top/' : 'https://vmct-cn.top/' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/VM-Chinese-translate-group' },
@@ -126,7 +127,10 @@ export default defineConfig({
         ],
       },
     ],
-    search: {
+    search: process.env.DOCS_LOCAL_SEARCH === '1' ? {
+      provider: 'local',
+      options: { translations: { button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' } } },
+    } : {
       provider: 'algolia',
       options: {
         appId: 'TTUZ1AK1BJ',

@@ -1,0 +1,19 @@
+[Unit]
+Description=VMCT static artifact deployment API and worker
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=vmct
+WorkingDirectory=/opt/vmct-static-deploy
+EnvironmentFile=/etc/vmct-static-deploy/api.env
+ExecStart=/usr/bin/node /opt/vmct-static-deploy/service.mjs
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+UMask=0022
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+{
+  "docs": {
+    "repository": "git@github.com:VM-Chinese-translate-group/VM-Docs.git",
+    "repositoryName": "VM-Chinese-translate-group/VM-Docs",
+    "branch": "ecs-artifacts",
+    "host": "docs.vmct.top",
+    "target": "/home/vmct/vmpm/dist/docs.vmct.top",
+    "requiredFiles": [
+      "index.html",
+      "vmtu/index.html",
+      "rule/common.html",
+      "sitemap.xml"
+    ]
+  }
+}

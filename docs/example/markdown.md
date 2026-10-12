@@ -37,7 +37,17 @@ HTML 规范由 W3C 负责维护。
 
 :::
 
-更多使用方式可以前往[`@nolebase/markdown-it-bi-directional-links`文档](https://nolebase-integrations.ayaka.io/pages/zh-CN/integrations/markdown-it-bi-directional-links/syntax)
+更多使用方式可以前往[`@nolebase/markdown-it-bi-directional-links`文档](https://nolebase-integrations.ayaka.io/pages/zh-CN/integrations/markdown-it-bi-directional-links/syntax)查看
+
+## 图片组 （Image group）<Badge type="info" text="Dependency" />
+
+此功能由`@miletorix/vitepress-image-group`提供支持，此功能用于展示多张图片。
+
+:::demo
+<ImageGroup :sources="['/img/tutorial/modpack/translation/pcl1.png','/img/tutorial/modpack/translation/pcl2.png']" type="auto"/>
+:::
+
+更多使用方式可以前往[`@miletorix/vitepress-image-group`文档](https://itsbonsaiborn.github.io/miletorix-vitepress-image-group/)查看
 
 ## 示例容器 （Demo）<Badge type="warning" text="Unstable" />
 

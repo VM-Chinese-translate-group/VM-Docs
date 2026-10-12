@@ -56,7 +56,7 @@
 
 > ✅ 两者均支持手动运行，操作如下图所示：
 
-![](.github/action.png)
+![[public/img/internal/action.png]]
 
 ##### 自动运行规则
 

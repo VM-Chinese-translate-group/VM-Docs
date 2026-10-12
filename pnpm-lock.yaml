@@ -17,9 +17,6 @@ importers:
       '@types/node':
         specifier: ^26.1.2
         version: 26.1.2
-      '@vercel/speed-insights':
-        specifier: ^2.0.0
-        version: 2.0.0(vue-router@5.2.0(@vue/compiler-sfc@3.5.40)(esbuild@0.28.1)(rolldown@1.1.5)(vite@8.1.5(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(less@4.8.1)(yaml@2.9.0))(vue@3.5.40))(vue@3.5.40)
       markdown-it:
         specifier: ^14.3.0
         version: 14.3.0
@@ -542,32 +539,6 @@ packages:
 
   '@ungap/structured-clone@1.3.3':
     resolution: {integrity: sha512-60YRaenCQcVjYEKOcG824+DRGGIQ3VKErcBoAEDJZz5bKIs2ZG+X/H9Nk+Q6EVkwJk5QNApxbrc5QtBSwtrXAg==}
-
-  '@vercel/speed-insights@2.0.0':
-    resolution: {integrity: sha512-jwkNcrTeafWxjmWq4AHBaptSqZiJkYU5adLC9QBSqeim0GcqDMgN5Ievh8OG1rJ6W3A4l1oiP7qr9CWxGuzu3w==}
-    peerDependencies:
-      '@sveltejs/kit': ^1 || ^2
-      next: '>= 13'
-      nuxt: '>= 3'
-      react: ^18 || ^19 || ^19.0.0-rc
-      svelte: '>= 4'
-      vue: ^3
-      vue-router: ^4
-    peerDependenciesMeta:
-      '@sveltejs/kit':
-        optional: true
-      next:
-        optional: true
-      nuxt:
-        optional: true
-      react:
-        optional: true
-      svelte:
-        optional: true
-      vue:
-        optional: true
-      vue-router:
-        optional: true
 
   '@vitejs/plugin-vue@6.0.8':
     resolution: {integrity: sha512-0ZjgOg7oO6farnNGup7yvoM/YXZV84OZxHAwtflItNa/6zzQyVb5LNxyea3FEKEX2XlagIKzrlH7wwxkKgtiew==}
@@ -1774,11 +1745,6 @@ snapshots:
   '@types/web-bluetooth@0.0.21': {}
 
   '@ungap/structured-clone@1.3.3': {}
-
-  '@vercel/speed-insights@2.0.0(vue-router@5.2.0(@vue/compiler-sfc@3.5.40)(esbuild@0.28.1)(rolldown@1.1.5)(vite@8.1.5(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(less@4.8.1)(yaml@2.9.0))(vue@3.5.40))(vue@3.5.40)':
-    optionalDependencies:
-      vue: 3.5.40
-      vue-router: 5.2.0(@vue/compiler-sfc@3.5.40)(esbuild@0.28.1)(rolldown@1.1.5)(vite@8.1.5(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(less@4.8.1)(yaml@2.9.0))(vue@3.5.40)
 
   '@vitejs/plugin-vue@6.0.8(vite@8.1.5(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(less@4.8.1)(yaml@2.9.0))(vue@3.5.40)':
     dependencies:

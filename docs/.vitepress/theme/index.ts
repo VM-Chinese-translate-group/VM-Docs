@@ -34,8 +34,6 @@ import FileTree from './components/FileTree.vue'
 import StepperContainerWrapper from './components/plugins/StepperContainerWrapper.vue'
 
 // @ts-ignore
-import SpeedInsights from './components/integrations/SpeedInsights.vue'
-// @ts-ignore
 import './style.css'
 // @ts-ignore
 import './styles/acrylic-navbar.css'
@@ -57,8 +55,6 @@ export default {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       // 为较窄的屏幕（通常是小于 iPad Mini）添加阅读增强菜单
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
-      // Add Vercel Speed Insights
-      'layout-bottom': () => h(SpeedInsights),
     })
   },
   enhanceApp({ app }) {
@@ -67,7 +63,6 @@ export default {
     app.component('MediumLinkCard', MediumLinkCard)
     app.component('FileTree', FileTree)
     app.component('StepperContainerWrapper', StepperContainerWrapper)
-    app.component('SpeedInsights', SpeedInsights)
     app.component('ImageGroup', ImageGroup)
     app.use(NolebaseInlineLinkPreviewPlugin)
     BackToTopButton(app, {

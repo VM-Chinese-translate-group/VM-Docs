@@ -2,7 +2,7 @@
 
 生产地址为 https://docs.vmct.top，国际站默认配置不变。
 
-`master` 更新后，Actions 使用 Node 24 和项目声明的 pnpm 构建文档，启用本地搜索并生成 docs.vmct.top 的 sitemap。PR 仅做构建检查。生产构建产物保存到 `ecs-artifacts` 分支，服务器不构建 docs。
+`master` 更新后，Actions 使用 Node 24 和项目声明的 pnpm 构建文档，生成 Pagefind 搜索索引和 docs.vmct.top 的 sitemap。PR 仅做构建检查。生产构建产物保存到 `ecs-artifacts` 分支，服务器不构建 docs。Pagefind 的 `pagefind/` 目录随静态产物一起发布，搜索无需额外后端服务。
 
 Actions 在产物发布后调用 `POST /internal/deploy`，携带仓库 Secret `DOCS_DEPLOY_TOKEN`。服务器把任务写入磁盘队列后返回任务 ID。Actions 查询 `/internal/deploy/jobs/<id>`，等待服务器校验来源、拉取指定产物、原子切换版本、检查源站 TLS、版本标记和首页。服务器返回 `succeeded` 才结束成功；部署失败、凭据缺失或等待超过 20 分钟，Actions 使用 `::error::` 输出原因并退出失败。
 

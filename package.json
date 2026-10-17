@@ -14,10 +14,12 @@
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
     "@nolebase/vitepress-plugin-inline-link-preview": "^2.18.2",
     "@vueuse/core": "14.4.0",
+    "pagefind": "1.5.2",
     "pnpm": "11.6.0",
     "prettier": "3.8.4",
     "taze": "^19.16.0",
-    "vitepress": "2.0.0-alpha.18"
+    "vitepress": "2.0.0-alpha.18",
+    "vitepress-plugin-pagefind": "0.4.25"
   },
   "dependencies": {
     "@miletorix/vitepress-back-to-top-button": "^1.0.3",

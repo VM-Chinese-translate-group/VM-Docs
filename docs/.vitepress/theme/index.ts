@@ -1,6 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 // @ts-ignore
-import { h } from 'vue'
+import { h, watchEffect } from 'vue'
+import { inBrowser } from 'vitepress'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
@@ -32,6 +33,9 @@ import MediumLinkCard from './components/MediumLinkCard.vue'
 import FileTree from './components/FileTree.vue'
 // @ts-ignore
 import StepperContainerWrapper from './components/plugins/StepperContainerWrapper.vue'
+// @ts-ignore
+import DemoWrapButton from './components/plugins/DemoWrapButton.vue'
+import { useDemoCodeWrap } from './composables/useDemoCodeWrap'
 
 // @ts-ignore
 import './style.css'
@@ -48,6 +52,12 @@ import './styles/plugins/stepper-container.css'
 
 export default {
   extends: DefaultTheme,
+  setup() {
+    const wrapped = useDemoCodeWrap()
+    watchEffect(() => {
+      if (inBrowser) document.documentElement.classList.toggle('demo-code-wrap', wrapped.value)
+    })
+  },
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
@@ -63,6 +73,7 @@ export default {
     app.component('MediumLinkCard', MediumLinkCard)
     app.component('FileTree', FileTree)
     app.component('StepperContainerWrapper', StepperContainerWrapper)
+    app.component('DemoWrapButton', DemoWrapButton)
     app.component('ImageGroup', ImageGroup)
     app.use(NolebaseInlineLinkPreviewPlugin)
     BackToTopButton(app, {

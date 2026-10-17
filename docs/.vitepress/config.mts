@@ -16,7 +16,20 @@ export default defineConfig({
     plugins: [
       pagefindPlugin({
         excludeSelector: ['.VPDocFooter', '.footnote-backref'],
+        btnPlaceholder: '搜索',
+        placeholder: '搜索文档',
+        emptyText: '未找到相关结果',
+        loadingText: '搜索中…',
+        heading: '共 {{searchResult}} 条结果',
+        toSelect: '选择',
+        toNavigate: '切换',
+        toClose: '关闭',
+        searchBy: '搜索提供者',
+        displayDetailedList: '显示详细列表',
+        resetSearch: '清空搜索',
+        closeSearch: '关闭搜索',
         customSearchQuery: chineseSearchOptimize,
+        forceLanguage: 'zh-cn'
       }),
     ],
     optimizeDeps: {

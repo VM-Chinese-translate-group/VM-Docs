@@ -13,6 +13,7 @@
     "@nolebase/markdown-it-bi-directional-links": "^2.18.2",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
     "@nolebase/vitepress-plugin-inline-link-preview": "^2.18.2",
+    "@vueuse/core": "14.4.0",
     "pagefind": "1.5.2",
     "pnpm": "11.6.0",
     "prettier": "3.8.4",

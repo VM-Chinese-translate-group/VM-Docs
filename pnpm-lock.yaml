@@ -42,6 +42,9 @@ importers:
       '@nolebase/vitepress-plugin-inline-link-preview':
         specifier: ^2.18.2
         version: 2.18.2(vitepress@2.0.0-alpha.18(@types/node@26.1.2)(esbuild@0.28.1)(jiti@2.7.0)(less@4.8.1)(postcss@8.5.25)(yaml@2.9.0))(vue@3.5.40)
+      '@vueuse/core':
+        specifier: 14.4.0
+        version: 14.4.0(vue@3.5.40)
       pagefind:
         specifier: 1.5.2
         version: 1.5.2

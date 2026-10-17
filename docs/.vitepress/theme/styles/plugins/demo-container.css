@@ -61,15 +61,18 @@
   color: inherit;
 }
 
-.demo-container-code-wrap {
+.vp-doc div.demo-container-code-wrap {
+  --vp-code-copy-copied-text-content: '已复制';
   position: relative;
+  margin: 0;
+  border-radius: 0;
   background: var(--vp-code-block-bg);
   color: var(--vp-code-block-color);
   border-top: 1px solid var(--vp-c-divider);
   display: none;
 }
 
-.demo-container--open > .demo-container-code-wrap {
+.vp-doc .demo-container--open > .demo-container-code-wrap {
   display: block;
 }
 
@@ -79,7 +82,39 @@
   align-items: center;
   justify-content: flex-end;
   gap: 6px;
-  padding: 8px 14px 0;
+  min-height: 52px;
+  padding: 8px 52px 4px 14px;
+}
+
+.vp-doc .demo-container-code-wrap > button.copy {
+  top: 8px;
+  border-left: 0;
+  border-radius: 0 4px 4px 0;
+  opacity: 1;
+}
+
+.demo-container-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--vp-code-copy-code-border-color);
+  border-radius: 4px 0 0 4px;
+  background: var(--vp-code-copy-code-bg);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s,
+    color 0.25s;
+}
+
+.demo-container-wrap:hover,
+.demo-container-wrap[aria-pressed='true'] {
+  border-color: var(--vp-code-copy-code-hover-border-color);
+  background: var(--vp-code-copy-code-hover-bg);
+  color: var(--vp-c-brand-1);
 }
 
 .demo-container-lang {
@@ -96,15 +131,26 @@
   line-height: 1.75;
 }
 
-.demo-container-code pre {
+.vp-doc .demo-container-code pre {
   margin: 0;
   padding: 0;
   background: transparent !important;
 }
 
-.demo-container-code code {
+.vp-doc .demo-container-code code {
   font: inherit;
   color: inherit;
+  padding: 0;
+}
+
+.demo-code-wrap .vp-doc .demo-container-code pre,
+.demo-code-wrap .vp-doc .demo-container-code code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.demo-code-wrap .vp-doc .demo-container-code code {
+  width: 100%;
 }
 
 .demo-container-code .shiki {

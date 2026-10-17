@@ -85,9 +85,11 @@ export function demo(md: MarkdownIt) {
     </svg>
     <span class="demo-container-title">${md.utils.escapeHtml(title)}</span>
   </button>
-  <div class="demo-container-code-wrap">
+  <div class="demo-container-code-wrap language-md">
+    <button type="button" class="copy" title="复制代码" aria-label="复制代码"></button>
     <div class="demo-container-code-header">
       <span class="demo-container-lang">md</span>
+      <DemoWrapButton />
     </div>
     <div class="demo-container-code">${high}</div>
   </div>

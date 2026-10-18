@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { chineseSearchOptimize, pagefindPlugin } from 'vitepress-plugin-pagefind'
 import { BiDirectionalLinks } from '@nolebase/markdown-it-bi-directional-links'
 import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
 // @ts-ignore
@@ -12,6 +13,25 @@ export default defineConfig({
   ...(process.env.DOCS_SITE_ORIGIN ? { sitemap: { hostname: process.env.DOCS_SITE_ORIGIN } } : {}),
   head: [['link', { rel: 'icon', href: '/img/logo.png' }]],
   vite: {
+    plugins: [
+      pagefindPlugin({
+        excludeSelector: ['.VPDocFooter', '.footnote-backref'],
+        btnPlaceholder: '搜索',
+        placeholder: '搜索文档',
+        emptyText: '未找到相关结果',
+        loadingText: '搜索中…',
+        heading: '共 {{searchResult}} 条结果',
+        toSelect: '选择',
+        toNavigate: '切换',
+        toClose: '关闭',
+        searchBy: '搜索提供者',
+        displayDetailedList: '显示详细列表',
+        resetSearch: '清空搜索',
+        closeSearch: '关闭搜索',
+        customSearchQuery: chineseSearchOptimize,
+        forceLanguage: 'zh-cn'
+      }),
+    ],
     optimizeDeps: {
       exclude: [
         '@nolebase/vitepress-plugin-inline-link-preview/client',
@@ -138,135 +158,6 @@ export default defineConfig({
         ],
       },
     ],
-    search: process.env.DOCS_LOCAL_SEARCH === '1' ? {
-      provider: 'local',
-      options: { translations: { button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' } } },
-    } : {
-      provider: 'algolia',
-      options: {
-        appId: 'TTUZ1AK1BJ',
-        apiKey: '079af68ecd924c327b5ee9591e0dd829',
-        indexName: 'VM-Docs',
-        translations: {
-          button: {
-            buttonText: '搜索',
-            buttonAriaLabel: '搜索',
-          },
-          modal: {
-            searchBox: {
-              clearButtonTitle: '清除',
-              clearButtonAriaLabel: '清除查询',
-              closeButtonText: '关闭',
-              closeButtonAriaLabel: '关闭',
-              placeholderText: '搜索文档',
-              placeholderTextAskAi: '再问一个问题...',
-              placeholderTextAskAiStreaming: '正在回答...',
-              searchInputLabel: '搜索',
-              backToKeywordSearchButtonText: '返回关键词搜索',
-              backToKeywordSearchButtonAriaLabel: '返回关键词搜索',
-              newConversationPlaceholder: '提问',
-              conversationHistoryTitle: '我的对话历史',
-              startNewConversationText: '开始新的对话',
-              viewConversationHistoryText: '对话历史',
-              threadDepthErrorPlaceholder: '对话已达上限',
-            },
-            footer: {
-              selectText: '选择',
-              submitQuestionText: '提交问题',
-              selectKeyAriaLabel: '回车键',
-              navigateText: '导航',
-              navigateUpKeyAriaLabel: '向上箭头',
-              navigateDownKeyAriaLabel: '向下箭头',
-              closeText: '关闭',
-              backToSearchText: '返回搜索',
-              closeKeyAriaLabel: 'Esc 键',
-              poweredByText: '由Algolia DocSearch提供支持',
-            },
-            errorScreen: {
-              titleText: '无法获取结果',
-              helpText: '你可能需要检查网络连接。',
-            },
-            startScreen: {
-              recentSearchesTitle: '最近',
-              noRecentSearchesText: '暂无最近搜索',
-              saveRecentSearchButtonTitle: '保存此搜索',
-              removeRecentSearchButtonTitle: '从历史记录中移除此搜索',
-              favoriteSearchesTitle: '收藏',
-              removeFavoriteSearchButtonTitle: '从收藏中移除此搜索',
-              recentConversationsTitle: '最近对话',
-              removeRecentConversationButtonTitle: '从历史记录中移除此对话',
-            },
-            noResultsScreen: {
-              noResultsText: '未找到相关结果',
-              suggestedQueryText: '尝试搜索',
-              reportMissingResultsText: '认为此查询应该有结果？',
-              reportMissingResultsLinkText: '告诉我们。',
-            },
-          },
-        },
-        locales: {
-          zh: {
-            translations: {
-              button: {
-                buttonText: '搜索',
-                buttonAriaLabel: '搜索',
-              },
-              modal: {
-                searchBox: {
-                  clearButtonTitle: '清除',
-                  clearButtonAriaLabel: '清除查询',
-                  closeButtonText: '关闭',
-                  closeButtonAriaLabel: '关闭',
-                  placeholderText: '搜索文档',
-                  placeholderTextAskAi: '再问一个问题...',
-                  placeholderTextAskAiStreaming: '正在回答...',
-                  searchInputLabel: '搜索',
-                  backToKeywordSearchButtonText: '返回关键词搜索',
-                  backToKeywordSearchButtonAriaLabel: '返回关键词搜索',
-                  newConversationPlaceholder: '提问',
-                  conversationHistoryTitle: '我的对话历史',
-                  startNewConversationText: '开始新的对话',
-                  viewConversationHistoryText: '对话历史',
-                  threadDepthErrorPlaceholder: '对话已达上限',
-                },
-                footer: {
-                  selectText: '选择',
-                  submitQuestionText: '提交问题',
-                  selectKeyAriaLabel: '回车键',
-                  navigateText: '导航',
-                  navigateUpKeyAriaLabel: '向上箭头',
-                  navigateDownKeyAriaLabel: '向下箭头',
-                  closeText: '关闭',
-                  backToSearchText: '返回搜索',
-                  closeKeyAriaLabel: 'Esc 键',
-                  poweredByText: '由Algolia DocSearch提供支持',
-                },
-                errorScreen: {
-                  titleText: '无法获取结果',
-                  helpText: '你可能需要检查网络连接。',
-                },
-                startScreen: {
-                  recentSearchesTitle: '最近',
-                  noRecentSearchesText: '暂无最近搜索',
-                  saveRecentSearchButtonTitle: '保存此搜索',
-                  removeRecentSearchButtonTitle: '从历史记录中移除此搜索',
-                  favoriteSearchesTitle: '收藏',
-                  removeFavoriteSearchButtonTitle: '从收藏中移除此搜索',
-                  recentConversationsTitle: '最近对话',
-                  removeRecentConversationButtonTitle: '从历史记录中移除此对话',
-                },
-                noResultsScreen: {
-                  noResultsText: '未找到相关结果',
-                  suggestedQueryText: '尝试搜索',
-                  reportMissingResultsText: '认为此查询应该有结果？',
-                  reportMissingResultsLinkText: '告诉我们。',
-                },
-              },
-            },
-          },
-        },
-      },
-    },
   },
   markdown: {
     config: (md) => {

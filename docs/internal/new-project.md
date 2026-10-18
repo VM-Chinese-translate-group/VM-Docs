@@ -1,34 +1,40 @@
 # 创建新项目
-> [!WARNING] 🚧警告🚧
-> 本文档目前仍处于 WIP 状态，随时可能进行更改。
 
-本文档是介绍如何在 ParaTranz 和 GitHub 上创建一个新的整合包汉化项目，并配置自动化同步和更新检查。
+本文档介绍如何在 ParaTranz 和 GitHub 上创建一个新的整合包汉化项目，并配置自动化同步和更新检查。
 
 ## 准备工作
 
-* 拥有 Github 中 *VM Chinese Translation Group* 组织的 *Owner* 权限
+* 拥有 Github 中 **VM Chinese Translation Group** 组织的 **Owner** 权限
 * 一个 ParaTranz 账号
 
 ## 创建项目
 
-* 在 ParaTranz 中创建一个项目
-    * 项目名称：“‘整合包原名’ 汉化”
+1. 在 ParaTranz 中创建一个项目
+    * 项目名称：`整合包原名 汉化`
     * 项目介绍：表明该项目属于VM汉化组即可，通常使用“VM汉化组自用”
-    * 除“校对等级”可以根据情况进行修改外，其余项不需要进行额外更改
-    * 接下来你需要用到项目 ID （项目页面网址上的数字）和你的个人 API （位于个人页面->设置）
-* 在 Github 上创建 repo
-    * 在 *VM Chinese Translation Group* 组织中找到名为 [Template-Repo](https://github.com/VM-Chinese-translate-group/Template-Repo) 的模板项目并进入
-    * 点击右上角 Use this template -> Create a new repository
+    * 除`校对等级`可以根据情况进行修改外，其余项不需要进行额外更改
+    * 接下来需要用到项目 ID（即项目页面网址上的数字）和你的个人 API （位于[个人页面->设置](https://paratranz.cn/users/my)）
+2. 在 Github 上创建仓库
+    * 在 **VM Chinese Translation Group** 组织中找到名为 [Template-Repo](https://github.com/VM-Chinese-translate-group/Template-Repo) 的模板项目并进入
+    * 点击右上角 `Use this template` -> `Create a new repository`
     * 将 Owner 设置为 VM-Chinese-translate-group
-    * Repository name 为“‘整合包原名’-Chinese”
-    * Description 任意，通常为“‘整合包原名’ 简中汉化”
-    * Choose visibility 为 Public
+    * 仓库名一般为`整合包原名-Chinese`
+    * 描述任意，通常为`整合包原名简中汉化`
+    * Choose visibility（仓库可见性）为 Public
     * 点击创建
+    * 注：主分支必须叫 `main`！
+
 
 ## 配置项目
+
 ### 自动化 Paratranz 同步
 
-注：主分支必须叫 `main`！
+为了使 Paratranz 与 GitHub 仓库保持同步，我们提供了两个 GitHub Actions 工作流：
+
+- **Paratranz → GitHub**：从 Paratranz 拉取译文至 GitHub 仓库。
+- **GitHub → Paratranz**：将原文内容推送到 Paratranz。
+
+下文将介绍如何配置这两个工作流。
 
 #### 1. 设置环境变量
 
@@ -42,8 +48,8 @@
    | API_KEY | 你的 Paratranz token，需具备上传文件权限（直接填写原始 token 即可） |
    | CF_API_KEY | 使用 CurseForge API 检查更新时必填；只填写原始 key，不要添加引号 |
 
-   🔑 Token 可在 [Paratranz 用户设置页](https://paratranz.cn/users/my) 获取。
-   CurseForge API Key 在这里[获取](https://console.curseforge.com/?#/api-keys)；文档要求第三方模组服务先申请 API 访问权限。如果工作流返回 HTTP 401/403，说明 CurseForge 未接受该 key；请确认授权或重新生成后，覆盖 `PARATRANZ_ENV` 环境中的 `CF_API_KEY` secret。
+   🔑 Token 可在 [Paratranz 用户设置页](https://paratranz.cn/users/my) 获取；
+   CurseForge API Key 需在这里[申请获取](https://console.curseforge.com/?#/api-keys)。为了方便使用，可直接粘贴`$2a$10$CZ3.Hk7xSK1pt95z7UWJ4e8FliYc8UqFx4/V/efg6RFYhK29QDnmW`
 
 3. 在该环境中添加 **环境变量（Environment variables）**：
 
@@ -51,44 +57,13 @@
       | ---- | ------------------------------- |
    | ID   | Paratranz 项目 ID，例如 `10719` |
 
-#### 2. 使用说明
-
-我们目前有两个 GitHub Actions 工作流：
-
-- **Paratranz → GitHub**：从 Paratranz 拉取译文至 GitHub 仓库。
-- **GitHub → Paratranz**：将原文内容推送到 Paratranz。
-
-> ✅ 两者均支持手动运行，操作如下图所示：
-
-![[public/img/internal/action.png]]
-
-##### 自动运行规则
-
-- **Paratranz → GitHub** 会在北京时间 **每天早上与晚上 10 点左右** 自动执行。
-- 下载译文至 GitHub 的功能可通过修改 `.github/workflows/download_release.yml` 内的 `cron 表达式` 自行设定执行时间。
-
-📎 参考：[Cron 表达式教程](https://blog.csdn.net/Stromboli/article/details/141962560)
-
-##### 发布与检查机制
-
-- 当有译文更改时，工作流会自动发布一个 **预发布 Release** 供测试。
-- 每次同步上游后，会运行一次 **FTB 任务颜色字符检查程序**：
-
-  - **发现错误**：在 Release 说明页面提示，并上传 HTML 报告至 **Artifacts** 和 **Release 页面**。
-  - **未发现错误**：工作流详情页会提示找不到报告文件，此属正常情况，无需担心。
-
-⚠️ 注意：
-
-- **GitHub → Paratranz** 的同步任务使用频率较低，仅支持手动触发。
-- 若项目已完成，请至仓库 **Settings** 中禁用工作流运行。
-
-##### 任务 JSON 仅在 Paratranz 分片
+#### 2. 上传译文
 
 对于 Minecraft 1.20 及以下常见的 JSON 任务语言文件，可以在 `.github/configs/modpack.json` 中配置虚拟分片。GitHub 的 `Source` 和 `CNPack` 仍各自只保留一个完整语言文件；上传时才按规则生成临时 JSON，下载时再按源文件的键顺序合并。
 
 该功能只处理 `jsonSplits` 中明确配置的 `.json` 文件，不会改变现有的 FTB Quests SNBT 拆分、上传、下载或合并逻辑。未配置时，Paratranz 同步行为保持不变。
 
-```jsonc
+```json5
 {
   "paratranz": {
     "jsonSplits": [
@@ -162,7 +137,7 @@ resourcepacks/vm_translations/assets/quests/lang/en_us/
 
 该文件必须是严格的 JSON，不能保留注释。完成所有配置后，务必把 `configured` 改为 `true`；保留为 `false` 时，更新检查会明确终止，避免模板默认值误更新仓库。
 
-```jsonc
+```json5
 // .github/configs/modpack.json
 {
   // [必需] 确认已经完成配置；实际文件中不要保留本示例的注释。

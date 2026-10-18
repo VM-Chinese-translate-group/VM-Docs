@@ -14,7 +14,7 @@
     version: '0.1.0',
     translation: {
       id: 'example', // [!code highlight]
-      url: 'https://vmct-cn.top/modpacks/example/', // [!code highlight]
+      url: 'https://vmct.top/modpacks/example/', // [!code highlight]
       language: 'zh_cn',
       version: '1.0.0', // [!code highlight]
     },

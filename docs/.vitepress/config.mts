@@ -68,7 +68,7 @@ export default defineConfig({
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/VM-Chinese-translate-group' },
-      { icon: 'bilibili', link: 'https://space.bilibili.com/2085089798' },
+      { icon: 'bilibili', link: 'https://space.bilibili.com/3546956559288550' },
     ],
     sidebar: [
       {

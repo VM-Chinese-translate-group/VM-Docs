@@ -5,7 +5,7 @@
 - 一个解压缩软件，如7-Zip、Bandizip、WinRAR、360压缩等；
 - 一个你喜欢的**最新版的**Minecraft启动器，推荐使用`HMCL`和`PCL2`。
 
-如果遇到任何问题，欢迎加入我们的[QQ交流群](https://vmct-cn.top/community)寻求帮助。
+如果遇到任何问题，欢迎加入我们的[QQ交流群](https://vmct.top/community)寻求帮助。
 
 ## 覆盖文件式
 

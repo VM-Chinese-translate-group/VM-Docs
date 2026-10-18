@@ -1,6 +1,6 @@
 # VM汉化组文档站
 
-立即访问：https://docs.vmct-cn.top/
+立即访问：https://docs.vmct.top/
 
 ## 📖 使用与部署
 

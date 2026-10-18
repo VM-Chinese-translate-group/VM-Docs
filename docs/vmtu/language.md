@@ -39,7 +39,7 @@ VMTU 对原版的语言设计进行了增强，支持备选回退语言和自动
     version: '0.1.0',
     translation: {
       id: 'example',
-      url: 'https://vmct-cn.top/modpacks/example/',
+      url: 'https://vmct.top/modpacks/example/',
       language: 'zh_cn', // [!code highlight]
       version: '1.0.0',
     },

@@ -4,7 +4,7 @@
 
 以下使用卓越2作为演示，其他在CurseForge发布的整合包类似
 
-一、打开整合包页面（卓越2为 https://www.curseforge.com/minecraft/modpacks/prominence-2-rpg ）
+一、打开整合包页面（卓越2为 https://www.curseforge.com/minecraft/modpacks/prominence-2-hasturian-era ）
 
 二、打开整合包页面的Files页面，选择你想开服的整合包版本
 

@@ -265,7 +265,7 @@
 
 ### 辞典资源
 
-- [模组翻译参考词典（VM汉化组）](https://dict.vmct-cn.top/)
+- [模组翻译参考词典（VM汉化组）](https://dict.vmct.top/)
 - [我的世界中英术语库](https://github.com/CFPAOrg/Glossary)
 - [CFPA汉化资源包仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package) 主页下的各类可用资源
 - [字统网-译名查询](https://zi.tools/?secondary=transliteration) 可用于查询人名地名正式翻译。

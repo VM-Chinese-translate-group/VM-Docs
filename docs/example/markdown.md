@@ -6,9 +6,6 @@ outline: deep
 
 # Markdown 扩展示例 <Badge type="danger" text="Alpha" />
 
-> [!WARNING] 🚧警告🚧
-> 本页面所有控件均处于WIP状态，随时可能进行破坏性更改
-
 本页展示了本文档提供的 Markdown 扩展功能。 VitePress所支持的 Markdown 扩展功能请查看[VitePress官方文档](https://vitepress.dev/guide/markdown)。
 
 ## 词语释义 (Abbr) <Badge type="info" text="Dependency" />

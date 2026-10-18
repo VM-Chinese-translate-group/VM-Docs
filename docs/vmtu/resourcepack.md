@@ -40,7 +40,8 @@ VM汉化资源包是 VM 汉化组为补全模组汉化维护制作的资源包�
 
 当模组配置中的 `autoLoadExtraTranslationPack` 启用时，VMTU 将会自动应用扩展汉化资源包
 
-你可以在配置文件的 `extraPackName` 设置扩展汉化资源包名称（包括后缀名）。
+你可以在配置文件的 `extraPackName` 条目设置扩展汉化资源包名称。
+如果资源包是 `.zip` 文件，需要包括后缀名；如果是文件夹，则直接填写即可，如 `VM Language Override`。
 
 ![[public/img/vmtu/config-resourcepack.png]]
 

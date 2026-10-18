@@ -13,7 +13,7 @@ ModpackInfo（汉化支持信息文件）是用于标记整合包信息以及汉
     version: '0.1.0', // 汉化适配的整合包版本，用于提示玩家是否需要升级整合包再安装新版汉化
     translation: {
       id: 'example', // 向云端查询汉化补丁是否为最新版的id（每个整合包id需唯一）
-      url: 'https://vmct-cn.top/modpacks/example/', // 汉化对应的发布页面
+      url: 'https://vmct.top/modpacks/example/', // 汉化对应的发布页面
       updateCheckUrl: 'https://github.com/VM-Chinese-translate-group/VM-Resources/blob/main/update/example.txt', // vm-meta v1链接，用于检查汉化更新（已从4.0.0起弃用）
       language: 'zh_cn', // 支持的语言，用于自动切换语言和汉化更新检测
       version: '1.0.0'  // 汉化补丁的版本号

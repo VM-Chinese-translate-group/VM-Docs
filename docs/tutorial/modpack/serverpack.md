@@ -2,9 +2,9 @@
 
 ## CurseForge整合包
 
-以下使用卓越2作为演示，其他在CurseForge发布的整合包类似
+以下使用[卓越2](https://www.curseforge.com/minecraft/modpacks/prominence-2-hasturian-era)作为演示，其他在CurseForge发布的整合包类似
 
-一、打开整合包页面（卓越2为 https://www.curseforge.com/minecraft/modpacks/prominence-2-hasturian-era ）
+一、打开整合包页面
 
 二、打开整合包页面的Files页面，选择你想开服的整合包版本
 
@@ -18,9 +18,9 @@
 
 ## FTB整合包
 
-以下使用FTB OceanBlock 2作为演示，其他在FTB官网发布的整合包类似
+以下使用[FTB Skies 2: Aero](https://www.feed-the-beast.com/modpacks/134-ftb-skies-2-aero/versions)作为演示，其他在FTB官网发布的整合包类似
 
-一、打开整合包页面（FTB OceanBlock 2为 https://www.feed-the-beast.com/modpacks/128-ftb-oceanblock-2 ）
+一、打开整合包页面
 
 二、打开整合包页面的`Versions`页面，在`Select Version`栏选择你想开服的整合包版本
 

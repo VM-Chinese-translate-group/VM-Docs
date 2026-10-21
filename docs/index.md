@@ -21,8 +21,8 @@ features:
     link: /vmtu/index
     linkText: 前往查看
   - icon: 📦
-    title: 整合包相关教程
-    details: 整合包相关实用教程与操作指南
+    title: 汉化安装相关教程
+    details: 汉化安装相关教程与操作指南
     link: /tutorial/modpack/index
     linkText: 前往查看
 ---

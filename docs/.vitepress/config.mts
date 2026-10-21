@@ -64,7 +64,7 @@ export default defineConfig({
           },
         ],
       },
-      { text: 'VM官网', link: process.env.DOCS_LOCAL_SEARCH === '1' ? 'https://www.vmct.top/' : 'https://vmct-cn.top/' },
+      { text: 'VM官网', link: 'https://www.vmct.top/' },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/VM-Chinese-translate-group' },

@@ -1,3 +1,3 @@
 # 教程索引
 
-- [整合包相关教程](modpack/index.md)
+- [汉化安装相关教程](modpack/index.md)

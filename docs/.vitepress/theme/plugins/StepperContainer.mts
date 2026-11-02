@@ -1,4 +1,5 @@
 import type MarkdownIt from 'markdown-it'
+import { findContainerClose } from './containerBoundary.mts'
 
 export function stepper(md: MarkdownIt) {
   md.block.ruler.before('fence', 'stepper_container', (state, startLine, endLine, silent) => {
@@ -8,24 +9,8 @@ export function stepper(md: MarkdownIt) {
 
     if (!lineContent.match(/^:::stepper(\s|$)/)) return false
 
-    // Find matching closing :::
-    let nextLine = startLine + 1
-    let nestingLevel = 1
-
-    while (nextLine < endLine) {
-      const ls = state.bMarks[nextLine] + state.tShift[nextLine]
-      const le = state.eMarks[nextLine]
-      const content = state.src.slice(ls, le).trim()
-
-      if (content.match(/^:::stepper(\s|$)/)) nestingLevel++
-      else if (content === ':::') {
-        nestingLevel--
-        if (nestingLevel === 0) break
-      }
-      nextLine++
-    }
-
-    if (nestingLevel !== 0) return false
+    const nextLine = findContainerClose(state, startLine, endLine)
+    if (nextLine < 0) return false
     if (silent) return true
 
     // Extract raw content

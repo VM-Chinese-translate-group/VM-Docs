@@ -36,7 +36,7 @@ HTML 规范由 W3C 负责维护。
 
 更多使用方式可以前往[`@nolebase/markdown-it-bi-directional-links`文档](https://nolebase-integrations.ayaka.io/pages/zh-CN/integrations/markdown-it-bi-directional-links/syntax)查看
 
-## 图片组 （Image group）<Badge type="info" text="Dependency" />
+## 图片组（Image group）<Badge type="info" text="Dependency" />
 
 此功能由`@miletorix/vitepress-image-group`提供支持，此功能用于展示多张图片。
 
@@ -46,7 +46,38 @@ HTML 规范由 W3C 负责维护。
 
 更多使用方式可以前往[`@miletorix/vitepress-image-group`文档](https://itsbonsaiborn.github.io/miletorix-vitepress-image-group/)查看
 
-## 示例容器 （Demo）<Badge type="warning" text="Unstable" />
+## 文件树（File Tree）<Badge type="info" text="Dependency" />
+
+此功能由`vitepress-plugin-file-tree`提供支持，此功能用于展示文件结构。
+
+:::demo
+::: file-tree
+- docs
+    - .vitepress
+        - ++ config.ts
+    - -- page1.md
+    - index.md
+- theme  # 一个 **主题** 目录
+    - client
+        - components
+            - **Navbar.vue**
+        - composables
+            - useNavbar.ts
+        - styles
+            - navbar.css
+        - config.ts
+    - node/
+- package.json
+- pnpm-lock.yaml
+- .gitignore
+- README.md
+- …
+:::
+:::
+
+更多使用方式可以前往[`vitepress-plugin-file-tree`文档](https://tuck.pengzhanbo.cn/zh/plugins/file-tree)查看
+
+## 示例容器（Demo）<Badge type="warning" text="Unstable" />
 
 通过本文档自行基于`markdown-it`接口实现的`demo`插件，我们提供了一个名为`demo`的示例容器。
 
@@ -61,7 +92,7 @@ HTML 规范由 W3C 负责维护。
 外层容器的其他内容。
 :::
 
-## 步骤组 （Stepper）<Badge type="warning" text="Unstable" />
+## 步骤组（Stepper）<Badge type="warning" text="Unstable" />
 
 通过本文档自行基于`markdown-it`接口实现的`stepper`插件，我们提供了一个名为`stepper`的步骤组容器。
 

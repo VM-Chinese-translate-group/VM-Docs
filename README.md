@@ -12,6 +12,8 @@
 pnpm i
 ```
 
+请使用 `package.json` 中 `packageManager` 指定的 pnpm 版本。`pnpm-workspace.yaml` 的 `allowBuilds` 已允许 `esbuild` 和 `pnpm` 运行安装脚本；升级依赖时若出现 `ERR_PNPM_IGNORED_BUILDS`，请先检查被拦截的脚本，再通过 `pnpm approve-builds` 按需授权。
+
 开发预览：
 
 ```sh
@@ -23,3 +25,7 @@ pnpm run docs:dev
 ```sh
 pnpm run docs:build
 ```
+
+主题中的文件树插件通过 `enhanceAppWithFileTree({ app })` 注册。供 VitePress 配置加载的自定义 Markdown 插件使用 `.mts` 文件及带扩展名的导入，以兼容 Vite 的原生 ESM 配置加载。
+
+导航栏兼容样式位于 `docs/.vitepress/theme/styles/patches.css`：阅读增强模式下由 VitePress 的 flex 布局预留侧栏宽度，不再重复添加左边距。`acrylic-navbar.css` 通过 VitePress 原生背景变量设置毛玻璃效果，平板宽度下主导航与次级导航共用一层模糊背景，避免不透明背景遮挡或滤镜叠加；首页顶部保持透明，移动端展开菜单时恢复背景。

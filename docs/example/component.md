@@ -84,26 +84,3 @@ outline: deep
 :::demo IconifyIcon示例
 <MiniLinkCard title="Modrinth" href="https://modrinth.com/mod/vmupdate" iconify="simple-icons:modrinth" iconifyColor="#60e499" :external="true"/>
 :::
-
-## `FileTree` 示例
-
-:::demo 目录示例
-<FileTree title="带标识的目录" :items="[
-    {
-      name: 'docs',
-      type: 'folder',
-      children: [
-        { name: 'index.md', type: 'file', flag: 'i' },
-        {
-          name: 'guide',
-          type: 'folder',
-          children: [
-            { name: 'getting-started.md', type: 'file', flag: '-' },
-            { name: 'conventions.md', type: 'file', flag: '+' }
-          ]
-        }
-      ]
-    }
-  ]"
-/>
-:::

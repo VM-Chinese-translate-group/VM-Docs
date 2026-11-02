@@ -39,12 +39,6 @@ VMTU 目前同时支持和维护以下的全版本，以下是支持版本列表
 | NeoForge   | 1.20~26.2                       |
 | Fabric     | 1.16.5~26.2                     |
 
-[^1]: i18nUpdateMod3是由CFPA制作的模组，提供了自动下载更新资源包的功能，VMTU的相关功能基于其代码修改而来。
-
-[^2]: 注：1.12.2 版本以后将不再更新主要版本（VMTU 6.0.0），将停留在 5.x 版本系列。
-
-[^3]: 注：对于 Forge 端 1.20.5 及以上版本，由于模组的前置依赖 Cloth Config API 已不再支持，故本模组也不支持。
-
 ## 开源协议
 
 开源协议：MIT（VMTUMod）、AGPL v3（VMTULibraries-ResourcePack）、LGPL v3（VMTULibraries-Common、VMTULibraries-Modpack）
@@ -54,3 +48,9 @@ VMTU 目前同时支持和维护以下的全版本，以下是支持版本列表
 - Common: VMTU通用代码库
 - ResourcePack: VMTU资源包库，用于管理汉化资源包的下载和激活。
 - Modpack: VMTU整合包库，用于管理整合包版本及其汉化补丁版本。
+
+[^1]: i18nUpdateMod3是由CFPA制作的模组，提供了自动下载更新资源包的功能，VMTU的相关功能基于其代码修改而来。
+
+[^2]: 注：1.12.2 版本以后将不再更新主要版本（VMTU 6.0.0），将停留在 5.x 版本系列。
+
+[^3]: 注：对于 Forge 端 1.20.5 及以上版本，由于模组的前置依赖 Cloth Config API 已不再支持，故本模组也不支持。

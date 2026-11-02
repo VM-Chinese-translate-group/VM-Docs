@@ -1,12 +1,13 @@
 import { defineConfig } from 'vitepress'
 import { BiDirectionalLinks } from '@nolebase/markdown-it-bi-directional-links'
 import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
+import { fileTreeMarkdownPlugin } from 'vitepress-plugin-file-tree'
 // @ts-ignore
 import mdAbbr from 'markdown-it-abbr'
 // @ts-ignore
 import mdFootnote from 'markdown-it-footnote'
-import { demo } from './theme/plugins/DemoContainer'
-import { stepper } from './theme/plugins/StepperContainer'
+import { demo } from './theme/plugins/DemoContainer.mts'
+import { stepper } from './theme/plugins/StepperContainer.mts'
 
 export default defineConfig({
   ...(process.env.DOCS_SITE_ORIGIN ? { sitemap: { hostname: process.env.DOCS_SITE_ORIGIN } } : {}),
@@ -32,10 +33,10 @@ export default defineConfig({
   title: 'VM Docs',
   description: 'VM 文档',
   themeConfig: {
-    outlineTitle: '目录',
+
     sidebarMenuLabel: '菜单',
     returnToTopLabel: '返回顶部',
-    lastUpdatedText: '最后更新',
+
     docFooter: {
       prev: '上一页',
       next: '下一页'
@@ -280,6 +281,7 @@ export default defineConfig({
       md.use(mdFootnote)
       md.use(demo)
       md.use(stepper)
+      md.use(fileTreeMarkdownPlugin)
     },
   },
 })

@@ -1,31 +1,17 @@
 import type MarkdownIt from 'markdown-it'
+// @ts-ignore
+import { findContainerClose } from './containerBoundary.mts'
 
 export function demo(md: MarkdownIt) {
-  md.block.ruler.before('fence', 'demo_container', (state, startLine, endLine, silent) => {
+  md.block.ruler.before('fence', 'demo_container', (state: { bMarks: { [x: string]: any }; tShift: { [x: string]: any }; eMarks: { [x: string]: any }; src: string; push: (arg0: string, arg1: string, arg2: number) => any; parentType: string; lineMax: number; md: { block: { tokenize: (arg0: any, arg1: any, arg2: number) => void } }; line: number }, startLine: number, endLine: number, silent: any) => {
     const startPos = state.bMarks[startLine] + state.tShift[startLine]
     const maxPos = state.eMarks[startLine]
     const lineContent = state.src.slice(startPos, maxPos).trim()
 
     if (!lineContent.match(/^:::demo(\s|$)/)) return false
 
-    // Find matching closing ::: with nesting support
-    let nextLine = startLine + 1
-    let nestingLevel = 1
-
-    while (nextLine < endLine) {
-      const ls = state.bMarks[nextLine] + state.tShift[nextLine]
-      const le = state.eMarks[nextLine]
-      const content = state.src.slice(ls, le).trim()
-
-      if (content.match(/^:::(demo|stepper)(\s|$)/)) nestingLevel++
-      else if (content === ':::') {
-        nestingLevel--
-        if (nestingLevel === 0) break
-      }
-      nextLine++
-    }
-
-    if (nestingLevel !== 0) return false
+    const nextLine = findContainerClose(state, startLine, endLine)
+    if (nextLine < 0) return false
     if (silent) return true
 
     // Extract title

@@ -4,3 +4,53 @@
 .VPSocialLinks.VPNavBarSocialLinks.social-links {
   margin-right: 0;
 }
+
+/* VitePress 2 reserves the sidebar column in flex layout. Nolebase's older
+ * navbar rules also reserve it with padding, which shifts search twice. */
+@media (min-width: 1280px) {
+  .VPNolebaseEnhancedReadabilitiesLayoutSwitchFullWidth {
+    --vm-nav-layout-max-width: var(--vp-nolebase-enhanced-readabilities-full-width-max-width);
+  }
+
+  :is(
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchSidebarWidthAdjustableOnly,
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchBothWidthAdjustable
+  ) {
+    --vm-nav-layout-max-width: var(--vp-nolebase-enhanced-readabilities-page-max-width);
+  }
+
+  :root:not([data-nolebase-vitepress-theme="voidzero"]) :is(
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchFullWidth,
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchSidebarWidthAdjustableOnly,
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchBothWidthAdjustable
+  ) .VPNavBar > .wrapper {
+    padding: 0;
+  }
+
+  :root:not([data-nolebase-vitepress-theme="voidzero"]) :is(
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchFullWidth,
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchSidebarWidthAdjustableOnly,
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchBothWidthAdjustable
+  ) :is(.VPNavBar, .VPNavBar.has-sidebar) > .wrapper > .container {
+    max-width: max(0px, calc(var(--vm-nav-layout-max-width) - 64px)) !important;
+  }
+
+  :root:not([data-nolebase-vitepress-theme="voidzero"]) :is(
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchFullWidth,
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchSidebarWidthAdjustableOnly,
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchBothWidthAdjustable
+  ) .VPNavBar.has-sidebar > .wrapper > .container > .title {
+    padding-left: 0 !important;
+    width: auto !important;
+  }
+
+  :root:not([data-nolebase-vitepress-theme="voidzero"]) :is(
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchFullWidth,
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchSidebarWidthAdjustableOnly,
+    .VPNolebaseEnhancedReadabilitiesLayoutSwitchBothWidthAdjustable
+  ) .VPNavBar.has-sidebar > .wrapper > .container > .content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: auto !important;
+  }
+}

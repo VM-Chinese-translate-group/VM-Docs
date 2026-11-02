@@ -23,6 +23,12 @@ import { ImageGroup } from '@miletorix/vitepress-image-group'
 // @ts-ignore
 import '@miletorix/vitepress-image-group/style.css'
 
+import ImageViewer from '@miletorix/vitepress-image-viewer'
+// @ts-ignore
+import '@miletorix/vitepress-image-viewer/style.css'
+
+import { enhanceAppWithFileTree } from 'vitepress-plugin-file-tree/client'
+
 // @ts-ignore
 import LargeLinkCard from './components/LargeLinkCard.vue'
 // @ts-ignore
@@ -79,5 +85,9 @@ export default {
     BackToTopButton(app, {
       progressColor: '#3451b2',
     })
+    ImageViewer(app)
+    // @ts-ignore
+    enhanceAppWithFileTree({ app })
   },
 } satisfies Theme
+

@@ -1,40 +1,40 @@
 # 创建新项目
+> [!WARNING]
+> 🚧本文档目仍处于 WIP 状态，随时可能进行更改。🚧
 
-本文档介绍如何在 ParaTranz 和 GitHub 上创建一个新的整合包汉化项目，并配置自动化同步和更新检查。
+本文档主要介绍了如何在 `Paratranz` 和 `Github` 上创建新的汉化项目并进行项目配置。
 
 ## 准备工作
 
-* 拥有 Github 中 **VM Chinese Translation Group** 组织的 **Owner** 权限
+* 拥有 Github 中 *VM Chinese Translation Group* 组织的 *Owner* 权限
 * 一个 ParaTranz 账号
 
 ## 创建项目
 
-1. 在 ParaTranz 中创建一个项目
-    * 项目名称：`整合包原名 汉化`
-    * 项目介绍：表明该项目属于VM汉化组即可，通常使用“VM汉化组自用”
-    * 除`校对等级`可以根据情况进行修改外，其余项不需要进行额外更改
-    * 接下来需要用到项目 ID（即项目页面网址上的数字）和你的个人 API （位于[个人页面->设置](https://paratranz.cn/users/my)）
-2. 在 Github 上创建仓库
-    * 在 **VM Chinese Translation Group** 组织中找到名为 [Template-Repo](https://github.com/VM-Chinese-translate-group/Template-Repo) 的模板项目并进入
-    * 点击右上角 `Use this template` -> `Create a new repository`
-    * 将 Owner 设置为 VM-Chinese-translate-group
-    * 仓库名一般为`整合包原名-Chinese`
-    * 描述任意，通常为`整合包原名简中汉化`
-    * Choose visibility（仓库可见性）为 Public
-    * 点击创建
-    * 注：主分支必须叫 `main`！
-
+* 在 ParaTranz 中创建项目
+  * 项目名称：**{整合包原名} 汉化**
+  * 项目介绍：表明该项目属于VM汉化组即可，通常使用**VM汉化组自用**
+  * 除`校对等级`可以根据情况进行修改外，其余项不需要进行额外更改
+  * 接下来你需要用到`项目 ID`（项目页面网址上的数字）和你的`个人 API`
+    * `项目 ID` 查询操作：`进入项目 -> 项目网页链接 -> 查看 .../projects/ 后的数字`
+    * `个人 API` 查询操作：`进入个人主页 -> 设置 -> 生成 API Token（若已有 API Token 则直接使用即可）`
+* 在 Github 上创建项目仓库
+   1. 进入 *VM Chinese Translation Group* 组织的仓库（Repositories）页面，点击右上角的 `New repository` 按钮。
+   2. General 部分
+      - `Owner` 更改为 `VM-Chinese-translate-group`
+      - `Repository Name` 填写 **整合包原名-Chinese**
+      - `Description` 无特殊情况填写为 **{整合包原名} 简体中文本地化**
+   3. Configuration 部分
+      - `Choose visibility` 更改为 `Public`
+      - `Start with a template` 更改为 `VM-Chinese-translate-group/Templete-Repo`
+      - `Include all branches` 保持为 `OFF`
+   4. 上述步骤完成后，点击下方绿色的 `Create repository` 按钮，即创建成功。
 
 ## 配置项目
 
 ### 自动化 Paratranz 同步
 
-为了使 Paratranz 与 GitHub 仓库保持同步，我们提供了两个 GitHub Actions 工作流：
-
-- **Paratranz → GitHub**：从 Paratranz 拉取译文至 GitHub 仓库。
-- **GitHub → Paratranz**：将原文内容推送到 Paratranz。
-
-下文将介绍如何配置这两个工作流。
+注：主分支必须叫 `main`！
 
 #### 1. 设置环境变量
 
@@ -48,8 +48,8 @@
    | API_KEY | 你的 Paratranz token，需具备上传文件权限（直接填写原始 token 即可） |
    | CF_API_KEY | 使用 CurseForge API 检查更新时必填；只填写原始 key，不要添加引号 |
 
-   🔑 Token 可在 [Paratranz 用户设置页](https://paratranz.cn/users/my) 获取；
-   CurseForge API Key 需在这里[申请获取](https://console.curseforge.com/?#/api-keys)。为了方便使用，可直接粘贴`$2a$10$CZ3.Hk7xSK1pt95z7UWJ4e8FliYc8UqFx4/V/efg6RFYhK29QDnmW`
+   🔑 Token 可在 [Paratranz 用户设置页](https://paratranz.cn/users/my) 获取。
+   CurseForge API Key 在这里[获取](https://console.curseforge.com/?#/api-keys)；文档要求第三方模组服务先申请 API 访问权限。如果工作流返回 HTTP 401/403，说明 CurseForge 未接受该 key；请确认授权或重新生成后，覆盖 `PARATRANZ_ENV` 环境中的 `CF_API_KEY` secret。
 
 3. 在该环境中添加 **环境变量（Environment variables）**：
 
@@ -57,13 +57,39 @@
       | ---- | ------------------------------- |
    | ID   | Paratranz 项目 ID，例如 `10719` |
 
-#### 2. 上传译文
+#### 2. 使用说明
+
+我们目前有两个 GitHub Actions 工作流：
+
+- **Paratranz → GitHub**：从 Paratranz 拉取译文至 GitHub 仓库。
+- **GitHub → Paratranz**：将原文内容推送到 Paratranz。
+
+> ✅ 两者均支持手动运行，操作如下图所示：
+
+![[public/img/internal/action.png]]
+
+##### 自动运行规则
+
+- **Paratranz → GitHub** 会在北京时间 **每天早上与晚上 10 点左右** 自动执行。
+- 下载译文至 GitHub 的功能可通过修改 `.github/workflows/download_release.yml` 内的 `cron 表达式` 自行设定执行时间。
+
+📎 参考：[Cron 表达式教程](https://blog.csdn.net/Stromboli/article/details/141962560)
+
+##### 发布与检查机制
+
+- 当有译文更改时，工作流会自动发布一个 **预发布 Release** 供测试。
+
+>⚠️ 注意：
+> - **GitHub → Paratranz** 的同步任务使用频率较低，仅支持手动触发。
+> - 若项目已完成，请至仓库 **Settings** 中禁用工作流运行。
+
+##### 任务 JSON 仅在 Paratranz 分片
 
 对于 Minecraft 1.20 及以下常见的 JSON 任务语言文件，可以在 `.github/configs/modpack.json` 中配置虚拟分片。GitHub 的 `Source` 和 `CNPack` 仍各自只保留一个完整语言文件；上传时才按规则生成临时 JSON，下载时再按源文件的键顺序合并。
 
 该功能只处理 `jsonSplits` 中明确配置的 `.json` 文件，不会改变现有的 FTB Quests SNBT 拆分、上传、下载或合并逻辑。未配置时，Paratranz 同步行为保持不变。
 
-```json5
+```jsonc
 {
   "paratranz": {
     "jsonSplits": [
@@ -137,7 +163,7 @@ resourcepacks/vm_translations/assets/quests/lang/en_us/
 
 该文件必须是严格的 JSON，不能保留注释。完成所有配置后，务必把 `configured` 改为 `true`；保留为 `false` 时，更新检查会明确终止，避免模板默认值误更新仓库。
 
-```json5
+```jsonc
 // .github/configs/modpack.json
 {
   // [必需] 确认已经完成配置；实际文件中不要保留本示例的注释。
@@ -206,18 +232,32 @@ resourcepacks/vm_translations/assets/quests/lang/en_us/
 #### 2. 工作流说明
 
 - **工作流文件**：`.github/workflows/check_update.yml`
-- **触发方式**：默认在北京时间 **每天早上 6 点左右** 自动运行，也支持在 Actions 页面手动触发。
+- **触发方式**：默认在北京时间（UTC+8） **每天早上 6 点左右** 自动运行，也支持在 Actions 页面手动触发。
 
-##### 自动化流程
+### Paratranz 术语管理和标记规则
 
-1. 工作流按计划或手动启动。
-2. 脚本根据 `modpack.json` 的配置，检查 CurseForge 是否有新版本发布。
-3. **如果检测到新版本**：
-  - 下载新旧两个版本的整合包存档。
-  - 对比 `overrides` 目录中的文件差异。
-  - 将文件的 **新增、修改、删除** 应用到 `sourceDir` 目录。
-  - 更新 `infoFilePath` 中的 `modpack.version` 和 `modpack.translation.version`，两者保持一致。
-  - 创建一个新的分支，并提交所有变更。
-  - **自动创建一个PR**，其中包含清晰的变更摘要。
-  - 生成一份详细的 HTML 差异报告，并将其链接评论到该 PR 中，供人工审查。
-4. **如果未检测到新版本**，工作流正常结束，不执行任何操作。
+#### 1. 术语管理
+
+  * Paratranz 自带术语添加、修改、删除功能。可以查看项目页面侧边栏的**术语**。
+  * 项目默认无术语， CFPA组织下的 [Grossary](https://github.com/CFPAOrg/Glossary/) 仓库存放了一部分经过筛选的术语，可以下载后导入项目。
+    * 导入术语操作：`进入项目 -> 设置与管理 -> 术语管理 -> 创建术语右侧的下拉按钮 -> 导入术语 -> 选择文件进行导入`
+    * 推荐导入：[模组材料简体中文翻译指南](https://github.com/CFPAOrg/Glossary/blob/main/Mod/模组材料简体中文翻译指南.tsv)、[模组简体中文翻译指南](https://github.com/CFPAOrg/Glossary/blob/main/Mod/模组简体中文翻译指南.tsv)
+  * 翻译过程中可通过右侧术语界面中的加号添加术语。
+    * `词性`按照实际情况选择，大多数情况请选择`名词`。
+    * `术语原文`请填写需要标记为术语的原文、单词、短语。
+    * `术语译文`直接填写翻译，不要添加任何备注。
+    * `术语变体`必要时填写缩写形式。
+    * `额外的说明`无特殊情况请填写`{示例模组}术语`。
+    * `大小写敏感`请默认取消勾选。
+
+#### 2. 标记规则
+  * Paratranz 自带特殊字符标记功能，所有经正则表达式过滤出的特殊符号将高亮显示。
+  * 添加特殊字符标记操作：`进入项目 -> 设置与管理 -> 标记规则 -> 自定义规则 -> 输入正则表达式 -> 添加规则`
+  * 这里提供了仙人掌编辑的正则：`&([^a-v0-9\s\\#])`，可以高亮出原版、FTBQ支持的大多数格式化字符，包括格式符号、颜色符号等。
+
+## 致谢
+
+* VM汉化组成员 七羽_Kiyo（SevenKiyo）撰写了本文初版。
+* VM汉化组成员 TexTrue（TexBlock）负责相关内容的修订与审校。
+* VM汉化组成员 仙人掌（Cactusstudent）补充了术语、标记相关内容，并审校了前文。
+* VM汉化组成员 捂脸（Wulian233）进行了部分内容的审校

@@ -6,7 +6,9 @@ import { fileTreeMarkdownPlugin } from 'vitepress-plugin-file-tree'
 import mdAbbr from 'markdown-it-abbr'
 // @ts-ignore
 import mdFootnote from 'markdown-it-footnote'
+// @ts-ignore
 import { demo } from './theme/plugins/DemoContainer.mts'
+// @ts-ignore
 import { stepper } from './theme/plugins/StepperContainer.mts'
 
 export default defineConfig({

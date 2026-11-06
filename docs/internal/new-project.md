@@ -121,15 +121,20 @@
 
 以上示例会在 Paratranz 中生成：
 
-```text
-resourcepacks/vm_translations/assets/quests/lang/en_us/
-├── applied_energistics_2.json
-├── chapter_group.json
-├── general.json
-├── main_story.json
-├── reward_table.json
-└── ...
-```
+::: file-tree
+- resourcepacks
+    - vm_translations
+        - assets
+            - quests
+                - lang
+                    - en_us
+                        - applied_energistics_2.json
+                        - chapter_group.json
+                        - general.json
+                        - main_story.json
+                        - reward_table.json
+                        - ...
+:::
 
 规则采用 Python 正则表达式，必须至少包含一个捕获组。常用写法如下；写入 JSON 时，表中的每个反斜杠都要写成两个反斜杠，例如 `\.` 写成 `\\.`。
 

@@ -203,9 +203,6 @@ importers:
       '@types/node':
         specifier: ^26.6.5
         version: 26.6.6
-      markdown-it:
-        specifier: ^14.3.3
-        version: 14.3.3
       markdown-it-abbr:
         specifier: ^2.0.0
         version: 2.0.0
@@ -231,6 +228,9 @@ importers:
       '@nolebase/vitepress-plugin-inline-link-preview':
         specifier: ^2.21.1
         version: 2.21.1(vitepress@2.0.0-alpha.21(@types/node@26.6.6)(esbuild@0.28.1)(jiti@2.7.0)(less@4.9.1)(postcss@8.5.29)(yaml@2.9.1))(vue@3.5.43)
+      '@types/markdown-it':
+        specifier: ^14.2.0
+        version: 14.2.0
       '@vueuse/core':
         specifier: 14.4.0
         version: 14.4.0(vue@3.5.43)

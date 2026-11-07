@@ -1,20 +1,25 @@
+import { globSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import { BiDirectionalLinks } from '@nolebase/markdown-it-bi-directional-links'
 import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
 import { fileTreeMarkdownPlugin } from 'vitepress-plugin-file-tree'
 // @ts-ignore
-import mdAbbr from 'markdown-it-abbr'
-// @ts-ignore
-import mdFootnote from 'markdown-it-footnote'
-// @ts-ignore
-import { demo } from './theme/plugins/DemoContainer.mts'
-// @ts-ignore
-import { stepper } from './theme/plugins/StepperContainer.mts'
+import { configureSiteMarkdown, siteCodeThemes, siteCodeColorReplacements, siteHeadingSlug } from './theme/plugins/SiteMarkdown.mts'
+
+// Browser previews resolve wiki links against real site files, without bundling document sources.
+const previewFiles = [...globSync('**/*', {
+  cwd: fileURLToPath(new URL('../', import.meta.url)),
+  exclude: ['.vitepress/**'],
+})].filter((file) => /\.(?:md|png|jpe?g|gif|svg|webp|avif|ico|mp3|wav|ogg|mp4|webm)$/i.test(file))
 
 export default defineConfig({
   ...(process.env.DOCS_SITE_ORIGIN ? { sitemap: { hostname: process.env.DOCS_SITE_ORIGIN } } : {}),
   head: [['link', { rel: 'icon', href: '/img/logo.png' }]],
   vite: {
+    define: {
+      __VM_DOC_FILES__: JSON.stringify(previewFiles.map((file) => file.replace(/\\/g, '/'))),
+    },
     optimizeDeps: {
       exclude: [
         '@nolebase/vitepress-plugin-inline-link-preview/client',
@@ -67,6 +72,7 @@ export default defineConfig({
           },
         ],
       },
+      { text: 'Markdown 编辑器', link: '/tools/markdown' },
       { text: 'VM官网', link: 'https://www.vmct.top/' },
     ],
     socialLinks: [
@@ -272,6 +278,9 @@ export default defineConfig({
     },
   },
   markdown: {
+    theme: siteCodeThemes,
+    colorReplacements: siteCodeColorReplacements,
+    anchor: { slugify: siteHeadingSlug },
     config: (md) => {
       md.use(
         BiDirectionalLinks({
@@ -279,10 +288,7 @@ export default defineConfig({
         }),
       )
       md.use(InlineLinkPreviewElementTransform)
-      md.use(mdAbbr)
-      md.use(mdFootnote)
-      md.use(demo)
-      md.use(stepper)
+      configureSiteMarkdown(md)
       md.use(fileTreeMarkdownPlugin)
     },
   },
